@@ -1,0 +1,4 @@
+generated: '2026-10-18'
+method: none
+scopes: []
+note: No OAuth2 scopes documented for Granicus APIs. Authentication uses API tokens (X-AUTH-TOKEN header) rather than OAuth.

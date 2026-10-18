@@ -1,0 +1,29 @@
+generated: '2026-10-18'
+method: searched
+source: https://developers.govdelivery.com/api/tms/, https://webapi.legistar.com/swagger/docs/v1
+standards:
+- id: REST
+  conforms: true
+  evidence: Both Legistar Web API and GovDelivery TMS API follow REST architectural style with HTTP methods and JSON responses
+- id: JSON
+  conforms: true
+  evidence: APIs return JSON responses
+- id: HTTPS
+  conforms: true
+  evidence: All APIs require HTTPS connections
+- id: FedRAMP
+  conforms: true
+  evidence: GovDelivery TMS is FedRAMP compliant according to documentation
+- id: openapi-3.0
+  conforms: true
+  evidence: the document declares 3.0.0
+- id: oauth2
+  conforms: false
+  evidence: no securitySchemes declared
+- id: rfc9457
+  conforms: false
+  evidence: no response declares application/problem+json
+- id: idempotency
+  conforms: false
+  evidence: no idempotency key parameter on mutating operations
+note: No domain-specific standards (SCIM, OData, OpenRTB, etc.) identified for Granicus APIs in government/civic engagement sector.

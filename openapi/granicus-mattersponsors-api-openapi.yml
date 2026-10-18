@@ -1,0 +1,343 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Sponsors API
+  version: v1
+  description: 'Operations tagged MatterSponsors across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterSponsors
+paths:
+  /v1/{Client}/Matters/{MatterId}/Sponsors:
+    get:
+      tags:
+      - MatterSponsors
+      summary: Gets all Matter Sponsors for one Matter record
+      operationId: MatterSponsors_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterSponsor'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterSponsor'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterSponsor'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterSponsor'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterSponsor'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterSponsor'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterSponsor'
+    post:
+      tags:
+      - MatterSponsors
+      summary: Adds one Matter Sponsor
+      operationId: MatterSponsors_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+        description: GranicusMatterSponsor object to be inserted. Note that MatterSponsorId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Sponsors/{MatterSponsorId}:
+    get:
+      tags:
+      - MatterSponsors
+      summary: Gets one Matter Sponsor for one Matter record
+      operationId: MatterSponsors_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterSponsorId
+        in: path
+        description: The MatterSponsorId of the Matter record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterSponsor'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterSponsor'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterSponsor'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterSponsor'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterSponsor'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterSponsor'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterSponsor'
+    put:
+      tags:
+      - MatterSponsors
+      summary: Updates one Matter Sponsor
+      operationId: MatterSponsors_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterSponsorId
+        in: path
+        description: The MatterSponsorId of the Matter record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterSponsor'
+        description: GranicusMatterSponsor object to be updated. Note that MatterSponsorId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - MatterSponsors
+      summary: Deletes one Matter Sponsor
+      operationId: MatterSponsors_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterSponsorId
+        in: path
+        description: The MatterSponsorId of the Matter record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterSponsor:
+      required:
+      - matterSponsorMatterId
+      - matterSponsorMatterVersion
+      type: object
+      properties:
+        matterSponsorId:
+          format: int32
+          type: integer
+        matterSponsorGuid:
+          type: string
+        matterSponsorLastModifiedUtc:
+          format: date-time
+          type: string
+        matterSponsorRowVersion:
+          format: byte
+          type: string
+        matterSponsorMatterId:
+          format: int32
+          type: integer
+        matterSponsorMatterVersion:
+          type: string
+        matterSponsorNameId:
+          format: int32
+          type: integer
+        matterSponsorBodyId:
+          format: int32
+          type: integer
+        matterSponsorName:
+          type: string
+        matterSponsorSequence:
+          format: int32
+          type: integer
+        matterSponsorLinkFlag:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

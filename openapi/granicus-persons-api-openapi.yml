@@ -1,0 +1,343 @@
+openapi: 3.2.0
+info:
+  title: Granicus Persons API
+  version: v1
+  description: 'Operations tagged Persons across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: Persons
+paths:
+  /v1/{Client}/Persons:
+    get:
+      tags:
+      - Persons
+      summary: Gets all Persons
+      operationId: Persons_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusPerson'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusPerson'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusPerson'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusPerson'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusPerson'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusPerson'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusPerson'
+    post:
+      tags:
+      - Persons
+      summary: Adds one Person
+      operationId: Persons_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+        description: GranicusPerson object to be inserted. Note that PersonId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Persons/{PersonId}:
+    get:
+      tags:
+      - Persons
+      summary: Gets one Person
+      operationId: Persons_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: PersonId
+        in: path
+        description: The Id of the Person.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusPerson'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusPerson'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusPerson'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusPerson'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusPerson'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusPerson'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusPerson'
+    put:
+      tags:
+      - Persons
+      summary: Updates one Person
+      operationId: Persons_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: PersonId
+        in: path
+        description: The Id of the Person.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusPerson'
+        description: GranicusPerson object to be updated. Note that PersonId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - Persons
+      summary: Deletes one Person
+      operationId: Persons_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: PersonId
+        in: path
+        description: The Id of the Person.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusPerson:
+      required:
+      - personLastName
+      - personFullName
+      type: object
+      properties:
+        personId:
+          format: int32
+          type: integer
+        personGuid:
+          type: string
+        personLastModifiedUtc:
+          format: date-time
+          type: string
+        personRowVersion:
+          format: byte
+          type: string
+        personFirstName:
+          type: string
+        personLastName:
+          type: string
+        personFullName:
+          type: string
+        personActiveFlag:
+          format: int32
+          type: integer
+        personCanViewFlag:
+          format: int32
+          type: integer
+        personUsedSponsorFlag:
+          format: int32
+          type: integer
+        personAddress1:
+          type: string
+        personCity1:
+          type: string
+        personState1:
+          type: string
+        personZip1:
+          type: string
+        personPhone:
+          type: string
+        personFax:
+          type: string
+        personEmail:
+          type: string
+        personWWW:
+          type: string
+        personAddress2:
+          type: string
+        personCity2:
+          type: string
+        personState2:
+          type: string
+        personZip2:
+          type: string
+        personPhone2:
+          type: string
+        personFax2:
+          type: string
+        personEmail2:
+          type: string
+        personWWW2:
+          type: string
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

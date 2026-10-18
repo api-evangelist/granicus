@@ -1,0 +1,341 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Texts API
+  version: v1
+  description: 'Operations tagged MatterTexts across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterTexts
+paths:
+  /v1/{Client}/Matters/{MatterId}/Texts/{MatterTextId}:
+    get:
+      tags:
+      - MatterTexts
+      summary: Gets one Matter Text
+      operationId: MatterTexts_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterTextId
+        in: path
+        description: The MatterTextId of the Matter Text.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterText'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterText'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterText'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterText'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterText'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterText'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterText'
+    put:
+      tags:
+      - MatterTexts
+      summary: Updates one Matter Text
+      operationId: MatterTexts_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterTextId
+        in: path
+        description: The MatterTextId of the Matter Text.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+        description: GranicusMatterText object to be updated. Note that MatterTextId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - MatterTexts
+      summary: Deletes one Matter Text
+      operationId: MatterTexts_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterTextId
+        in: path
+        description: The MatterTextId of the Matter Text.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Versions:
+    get:
+      tags:
+      - MatterTexts
+      summary: Gets Matter Text versions for one Matter record
+      operationId: MatterTexts_GetVersions
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusKeyValue'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusKeyValue'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusKeyValue'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusKeyValue'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusKeyValue'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusKeyValue'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusKeyValue'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Texts:
+    post:
+      tags:
+      - MatterTexts
+      summary: Adds one Matter Text
+      operationId: MatterTexts_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterText'
+        description: GranicusMatterText object to be inserted. Note that MatterTextId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusKeyValue:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+    GranicusMatterText:
+      required:
+      - matterTextMatterId
+      type: object
+      properties:
+        matterTextId:
+          format: int32
+          type: integer
+        matterTextGuid:
+          type: string
+        matterTextLastModifiedUtc:
+          format: date-time
+          type: string
+        matterTextRowVersion:
+          format: byte
+          type: string
+        matterTextMatterId:
+          format: int32
+          type: integer
+        matterTextVersion:
+          type: string
+        matterTextPlain:
+          type: string
+        matterTextRtf:
+          type: string
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

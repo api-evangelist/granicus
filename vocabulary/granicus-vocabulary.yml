@@ -1,0 +1,283 @@
+generated: '2026-10-18'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/granicus-legistar-openapi.yml
+vocabulary:
+  name: Granicus Domain Vocabulary
+  description: 'Terms declared by Granicus''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-18'
+  terms:
+  - term: GranicusAction
+    definition: 'Object declared by the contract with fields: actionId, actionGuid, actionLastModifiedUtc, actionRowVersion, actionName, actionActiveFlag,
+      actionUsedFlag.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusAction
+  - term: GranicusBody
+    definition: 'Object declared by the contract with fields: bodyId, bodyGuid, bodyLastModifiedUtc, bodyRowVersion, bodyName, bodyTypeId, bodyTypeName,
+      bodyMeetFlag, bodyActiveFlag, bodySort, bodyDescription, bodyContactNameId. (8 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusBody
+  - term: GranicusBodyType
+    definition: 'Object declared by the contract with fields: bodyTypeId, bodyTypeGuid, bodyTypeLastModifiedUtc, bodyTypeRowVersion, bodyTypeName.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusBodyType
+  - term: GranicusCodeSection
+    definition: 'Object declared by the contract with fields: codeSectionId, codeSectionGuid, codeSectionLastModifiedUtc, codeSectionRowVersion,
+      codeSectionNumber, codeSectionName, codeSectionActiveFlag, codeSectionUsedFlag.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusCodeSection
+  - term: GranicusEventItem
+    definition: 'Object declared by the contract with fields: eventItemId, eventItemGuid, eventItemLastModifiedUtc, eventItemRowVersion, eventItemEventId,
+      eventItemAgendaSequence, eventItemMinutesSequence, eventItemAgendaNumber, eventItemVideo, eventItemVideoIndex, eventItemVersion, eventItemAgendaNote.
+      (23 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusEventItem
+  - term: GranicusMatterAttachment
+    definition: 'Object declared by the contract with fields: matterAttachmentId, matterAttachmentGuid, matterAttachmentLastModifiedUtc, matterAttachmentRowVersion,
+      matterAttachmentName, matterAttachmentHyperlink, matterAttachmentFileName, matterAttachmentMatterVersion, matterAttachmentIsHyperlink, matterAttachmentBinary,
+      matterAttachmentIsSupportingDocument, matterAttachmentShowOnInternetPage. (6 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterAttachment
+  - term: GranicusEvent
+    definition: 'Object declared by the contract with fields: eventId, eventGuid, eventLastModifiedUtc, eventRowVersion, eventBodyId, eventBodyName,
+      eventDate, eventTime, eventVideoStatus, eventAgendaStatusId, eventAgendaStatusName, eventMinutesStatusId. (11 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusEvent
+  - term: GranicusIndex
+    definition: 'Object declared by the contract with fields: indexId, indexGuid, indexLastModifiedUtc, indexRowVersion, indexName, indexActiveFlag,
+      indexUsedFlag, api_metadata.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusIndex
+  - term: GranicusMatterCodeSection
+    definition: 'Object declared by the contract with fields: matterCodeSectionId, matterCodeSectionGuid, matterCodeSectionLastModifiedUtc, matterCodeSectionRowVersion,
+      matterCodeSectionMatterId, matterCodeSectionCodeSectionId, matterCodeSectionNumber, matterCodeSectionName.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterCodeSection
+  - term: GranicusMatterHistory
+    definition: 'Object declared by the contract with fields: matterHistoryId, matterHistoryGuid, matterHistoryLastModifiedUtc, matterHistoryRowVersion,
+      matterHistoryEventId, matterHistoryAgendaSequence, matterHistoryMinutesSequence, matterHistoryAgendaNumber, matterHistoryVideo, matterHistoryVideoIndex,
+      matterHistoryVersion, matterHistoryAgendaNote. (19 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterHistory
+  - term: GranicusMatterIndex
+    definition: 'Object declared by the contract with fields: matterIndexId, matterIndexGuid, matterIndexLastModifiedUtc, matterIndexRowVersion,
+      matterIndexMatterId, matterIndexIndexId, matterIndexName.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterIndex
+  - term: GranicusMatterRelation
+    definition: 'Object declared by the contract with fields: matterRelationId, matterRelationGuid, matterRelationLastModifiedUtc, matterRelationRowVersion,
+      matterRelationMatterId, matterRelationFlag.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterRelation
+  - term: GranicusMatterRequester
+    definition: 'Object declared by the contract with fields: matterRequesterName.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterRequester
+  - term: GranicusMatter
+    definition: 'Object declared by the contract with fields: matterId, matterGuid, matterLastModifiedUtc, matterRowVersion, matterFile, matterName,
+      matterTitle, matterTypeId, matterTypeName, matterStatusId, matterStatusName, matterBodyId. (42 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatter
+  - term: GranicusMatterReport
+    definition: 'Object declared by the contract with fields: reportName, reportURL, reportType.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterReport
+  - term: GranicusMatterSponsor
+    definition: 'Object declared by the contract with fields: matterSponsorId, matterSponsorGuid, matterSponsorLastModifiedUtc, matterSponsorRowVersion,
+      matterSponsorMatterId, matterSponsorMatterVersion, matterSponsorNameId, matterSponsorBodyId, matterSponsorName, matterSponsorSequence, matterSponsorLinkFlag.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterSponsor
+  - term: GranicusMatterStatus
+    definition: 'Object declared by the contract with fields: matterStatusId, matterStatusGuid, matterStatusLastModifiedUtc, matterStatusRowVersion,
+      matterStatusName, matterStatusSort, matterStatusActiveFlag, matterStatusDescription, matterStatusUsedFlag, matterStatusPublicFlag.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterStatus
+  - term: GranicusMatterText
+    definition: 'Object declared by the contract with fields: matterTextId, matterTextGuid, matterTextLastModifiedUtc, matterTextRowVersion, matterTextMatterId,
+      matterTextVersion, matterTextPlain, matterTextRtf.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterText
+  - term: GranicusKeyValue
+    definition: 'Object declared by the contract with fields: key, value.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusKeyValue
+  - term: GranicusMatterType
+    definition: 'Object declared by the contract with fields: matterTypeId, matterTypeGuid, matterTypeLastModifiedUtc, matterTypeRowVersion, matterTypeName,
+      matterTypeSort, matterTypeActiveFlag, matterTypeDescription, matterTypeUsedFlag.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatterType
+  - term: GranicusOfficeRecord
+    definition: 'Object declared by the contract with fields: officeRecordId, officeRecordGuid, officeRecordLastModifiedUtc, officeRecordRowVersion,
+      officeRecordFirstName, officeRecordLastName, officeRecordEmail, officeRecordFullName, officeRecordStartDate, officeRecordEndDate, officeRecordSort,
+      officeRecordPersonId. (10 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusOfficeRecord
+  - term: GranicusPerson
+    definition: 'Object declared by the contract with fields: personId, personGuid, personLastModifiedUtc, personRowVersion, personFirstName,
+      personLastName, personFullName, personActiveFlag, personCanViewFlag, personUsedSponsorFlag, personAddress1, personCity1. (14 more)'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusPerson
+  - term: GranicusRollCall
+    definition: 'Object declared by the contract with fields: rollCallId, rollCallGuid, rollCallLastModifiedUtc, rollCallRowVersion, rollCallPersonId,
+      rollCallPersonName, rollCallValueId, rollCallValueName, rollCallSort, rollCallResult, rollCallEventItemId.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusRollCall
+  - term: GranicusVote
+    definition: 'Object declared by the contract with fields: voteId, voteGuid, voteLastModifiedUtc, voteRowVersion, votePersonId, votePersonName,
+      voteValueId, voteValueName, voteSort, voteResult, voteEventItemId.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusVote
+  - term: GranicusVoteType
+    definition: 'Object declared by the contract with fields: voteTypeId, voteTypeGuid, voteTypeLastModifiedUtc, voteTypeRowVersion, voteTypeName,
+      voteTypePluralName, voteTypeUsedFor, voteTypeResult, voteTypeSort.'
+    tags:
+    - Object
+    source: openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusVoteType
+  - term: Actions
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Actions: Gets all Actions.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: Bodies
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Bodies: Gets all Bodies.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: BodyTypes
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/BodyTypes: Gets all Body Types.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: CodeSections
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/CodeSections: Gets all Code Sections.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: EventItems
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Events/{EventId}/EventItems: Gets all Event Items under a particular
+      Event.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: Events
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Events: Gets all Events.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: Indexes
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Indexes: Gets all Indexes.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterAttachments
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Matters/{MatterId}/Attachments: Gets all available for Internet
+      viewing Matter Attachments for one Matter record.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterCodeSections
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Matters/{MatterId}/CodeSections: Gets all Matter CodeSections
+      for one Matter record.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterHistories
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Matters/{MatterId}/Histories: Gets all Matter History records
+      under a particular Matter.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterIndexes
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/MatterIndexes: Gets all Matter Indexes.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterRelations
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Matters/{MatterId}/Relations: Gets all Matter Relations for one
+      Matter record.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterRequesters
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/MatterRequesters: Gets all Matter Requesters.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: Matters
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Matters: Gets all Matters.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterSponsors
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Matters/{MatterId}/Sponsors: Gets all Matter Sponsors for one
+      Matter record.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterStatuses
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/MatterStatuses: Gets all Matter Statuses.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterTexts
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Matters/{MatterId}/Texts/{MatterTextId}: Gets one Matter Text.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: MatterTypes
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/MatterTypes: Gets all Matter Types.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: OfficeRecords
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/OfficeRecords: Gets all Office Records.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: Persons
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/Persons: Gets all Persons.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: RollCalls
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/EventItems/{EventItemId}/RollCalls: Gets all Roll Call Items under
+      a particular Event Item.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: Votes
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/EventItems/{EventItemId}/Votes: Gets all Vote Items under a particular
+      Event Item.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml
+  - term: VoteTypes
+    definition: 'Resource group in the contract; its operation GET /v1/{Client}/VoteTypes: Gets all Vote Types.'
+    tags:
+    - Resource Group
+    source: openapi/granicus-legistar-openapi.yml

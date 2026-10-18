@@ -1,0 +1,138 @@
+generated: '2026-10-18'
+method: searched
+source: https://granicus.com/privacy-policy/
+note: >-
+  Read from Granicus's own Global Privacy Notice (last updated July 2026), Trust Center and Security page,
+  all fetched 2026-10-18 with HTTP 200. No published subprocessor list exists (https://granicus.com/subprocessors/
+  returned 404; the notice says the list is available on request). https://granicus.com/accessibility/ is a
+  marketing guide to ADA/WCAG for government customers and NOT an accessibility conformance statement for
+  Granicus's own products, so accessibility_conformance is not recorded. Nothing found on global privacy
+  control, AI transparency, SBOM, transparency reports, exit assistance or support lifetime.
+signals:
+  data_subject_request:
+    url: https://granicus.com/privacy-policy/
+    section: Your rights
+    channel: contact details in the notice; dpo@granicus.com
+    rights_named: [access, data portability, deletion, correction, restriction, objection, withdrawal of consent]
+    evidence:
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        Right to data portability: You may have the right to receive all such personal data about you from
+        Granicus in a structured, commonly used and machine-readable format, and also to require us to transmit
+        it to another entity where this is technically feasible.
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        You may contact us using the contact information above if you would like us to delete your personal
+        data or to have your personal data corrected and, if required to do so, we will comply with your request.
+    note: >-
+      Names the full GDPR rights set (qualified with "may have the right") and a contact route; no response
+      SLA is stated on the page.
+  data_retention:
+    url: https://granicus.com/privacy-policy/
+    section: Data retention
+    evidence:
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        We retain personal data only for as long as is necessary to fulfil the purposes for which it was
+        collected and to comply with our legal obligations. Retention periods by data category are set out in
+        the table above.
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        3 years from your last interaction, or for the duration of the contractual relationship plus 1 year
+        thereafter. Marketing data is retained until you withdraw your consent or object to the processing,
+        whichever occurs first.
+    note: >-
+      Per-category retention periods are published in a table (Art. 13(2)(a) GDPR column); this covers
+      website/marketing personal data, not customer platform data.
+  subprocessors:
+    url: https://granicus.com/trust-center/
+    section: Subprocessors
+    published_list: false
+    evidence:
+    - source: https://granicus.com/trust-center/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        We conduct due diligence when engaging subprocessors and service providers that may process personal
+        data on our behalf. We have contractual clauses in place to maintain GDPR compliant transfers and
+        processing activities with vendors.
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        For the full list of the Granicus entities, Data Processors and other third parties that we may share
+        your data with, please contact us as set out above.
+    note: >-
+      A subprocessor diligence policy exists but no list is published; the list is available only on request.
+  data_residency:
+    url: https://granicus.com/privacy-policy/
+    section: Does Granicus transfer my personal data overseas?
+    evidence:
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        If we transfer your personal data to entities outside of the EEA (which include our IT service
+        providers, recruitment partners and other Granicus entities in the US and India), we will make sure
+        that your data is being protected as required by applicable data protection law, as described in more
+        detail below.
+    - source: https://granicus.com/trust-center/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        When Granicus transfers personal data outside the European Economic Area, we utilize legitimizing
+        mechanisms like Standard Contractual Clauses to lawfully conduct those transfers under the GDPR.
+    note: >-
+      A transfer posture (US and India named; SCCs and EU-U.S. DPF certification), not a customer-selectable
+      residency commitment. No region choice is offered on these pages.
+  incident_notification:
+    url: https://granicus.com/security/
+    evidence:
+    - source: https://granicus.com/security/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        In the event of a breach, our dedicated incident response team follows established procedures for
+        containing, investigating, and remediating the situation. We notify any users or applicable regulators
+        in compliance with breach notification laws.
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        Notifiable Data Breaches (NDB): We comply with the NDB scheme under Part IIIC of the Privacy Act 1988.
+        If a data breach is likely to result in serious harm to you, we will notify both you and the OAIC as
+        soon as practicable.
+    note: >-
+      Commits to notification as required by law ("as soon as practicable" for Australia); no fixed hour
+      window is published.
+  age_assurance:
+    url: https://granicus.com/privacy-policy/
+    section: Children's data
+    evidence:
+    - source: https://granicus.com/privacy-policy/
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: >-
+        Our websites and services are not directed at children under the age of 16 (or such lower age as is
+        applicable in the relevant jurisdiction under Article 8 GDPR or equivalent national implementing law).
+        We do not knowingly collect personal data from children under 16.
+    note: >-
+      An under-16 non-direction statement with deletion on report (dpo@granicus.com); no age-verification
+      mechanism is described.
+leads:
+- signal: subprocessors
+  url: https://granicus.com/subprocessors/
+  status: 404
+  reason: no public subprocessor list at this path
+- signal: accessibility_conformance
+  url: https://granicus.com/accessibility/
+  status: 200
+  reason: customer-facing ADA/WCAG guide, not a conformance statement for Granicus products

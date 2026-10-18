@@ -1,0 +1,790 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Indexes API
+  version: v1
+  description: 'Operations tagged MatterIndexes across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterIndexes
+paths:
+  /v1/{Client}/MatterIndexes:
+    get:
+      tags:
+      - MatterIndexes
+      summary: Gets all Matter Indexes
+      operationId: MatterIndexes_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+    post:
+      tags:
+      - MatterIndexes
+      summary: Adds one Matter Index
+      operationId: MatterIndexes_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+        description: GranicusMatterIndex object to be inserted. Note that MatterIndexId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/MatterIndexes/{MatterIndexId}:
+    get:
+      tags:
+      - MatterIndexes
+      summary: Gets one Matter Index
+      operationId: MatterIndexes_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterIndexId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/MatterIndexes/Index/{IndexId}:
+    get:
+      tags:
+      - MatterIndexes
+      summary: Gets all Matter Indexes for one IndexID
+      operationId: MatterIndexes_GetAllForIndexID
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: IndexId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/MatterIndexes/Matter/{MatterId}:
+    get:
+      tags:
+      - MatterIndexes
+      summary: Gets all Matter Indexes for one Matter record
+      operationId: MatterIndexes_GetAllForMatter
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Indexes:
+    get:
+      tags:
+      - MatterIndexes
+      summary: Gets all Matter Indexes for one Matter record
+      operationId: getV1ByClientMattersByMatterIdIndexes
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterIndex'
+      x-operation-id-source: normalized
+      x-operation-id-original: MatterIndexes_GetAllForMatter
+    post:
+      tags:
+      - MatterIndexes
+      summary: Adds one Matter Index
+      operationId: postV1ByClientMattersByMatterIdIndexes
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+        description: GranicusMatterIndex object to be inserted. Note that MatterIndexId is not required to be set.
+        required: true
+      x-operation-id-source: normalized
+      x-operation-id-original: MatterIndexes_Post
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Indexes/{MatterIndexId}:
+    get:
+      tags:
+      - MatterIndexes
+      summary: Gets one Matter Index associated with a specific Matter
+      operationId: MatterIndexes_GetByMatterAndId
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterIndexId
+        in: path
+        description: The MatterIndexId of the Matter Index.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterIndex'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterIndex'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterIndex'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterIndex'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterIndex'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterIndex'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterIndex'
+    put:
+      tags:
+      - MatterIndexes
+      summary: Updates one Matter Index
+      operationId: MatterIndexes_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterIndexId
+        in: path
+        description: The MatterIndexId of the Matter Index.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+        description: GranicusMatterIndex object to be updated. Note that MatterIndexId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - MatterIndexes
+      summary: Deletes one Matter Index
+      operationId: MatterIndexes_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterIndexId
+        in: path
+        description: The MatterIndexId of the Matter Index.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/MatterIndexes/{MatterId}:
+    put:
+      tags:
+      - MatterIndexes
+      summary: Updates one Matter Index
+      operationId: putV1ByClientMatterIndexesByMatterId
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterIndexId
+        in: query
+        description: The MatterIndexId of the Matter Index.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterIndex'
+        description: GranicusMatterIndex object to be updated. Note that MatterIndexId is not required to be set.
+        required: true
+      x-operation-id-source: normalized
+      x-operation-id-original: MatterIndexes_Put
+    delete:
+      tags:
+      - MatterIndexes
+      summary: Deletes one Matter Index
+      operationId: deleteV1ByClientMatterIndexesByMatterId
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterIndexId
+        in: query
+        description: The MatterIndexId of the Matter Index.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      x-operation-id-source: normalized
+      x-operation-id-original: MatterIndexes_Delete
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterIndex:
+      required:
+      - matterIndexMatterId
+      - matterIndexIndexId
+      type: object
+      properties:
+        matterIndexId:
+          format: int32
+          type: integer
+        matterIndexGuid:
+          type: string
+        matterIndexLastModifiedUtc:
+          format: date-time
+          type: string
+        matterIndexRowVersion:
+          format: byte
+          type: string
+        matterIndexMatterId:
+          format: int32
+          type: integer
+        matterIndexIndexId:
+          format: int32
+          type: integer
+        matterIndexName:
+          type: string
+  requestBodies:
+    GranicusMatterIndex2:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        text/xml:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+      description: GranicusMatterIndex object to be updated. Note that MatterIndexId is not required to be set.
+      required: true
+    GranicusMatterIndex:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        text/xml:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/GranicusMatterIndex'
+      description: GranicusMatterIndex object to be inserted. Note that MatterIndexId is not required to be set.
+      required: true
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

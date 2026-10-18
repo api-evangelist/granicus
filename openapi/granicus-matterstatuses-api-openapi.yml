@@ -1,0 +1,311 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Statuses API
+  version: v1
+  description: 'Operations tagged MatterStatuses across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterStatuses
+paths:
+  /v1/{Client}/MatterStatuses:
+    get:
+      tags:
+      - MatterStatuses
+      summary: Gets all Matter Statuses
+      operationId: MatterStatuses_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterStatus'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterStatus'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterStatus'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterStatus'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterStatus'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterStatus'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterStatus'
+    post:
+      tags:
+      - MatterStatuses
+      summary: Adds one Matter Status
+      operationId: MatterStatuses_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+        description: GranicusMatterStatus object to be inserted. Note that MatterStatusID is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/MatterStatuses/{MatterStatusId}:
+    get:
+      tags:
+      - MatterStatuses
+      summary: Gets one Matter Status
+      operationId: MatterStatuses_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterStatusId
+        in: path
+        description: The Id of the Matter Status.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterStatus'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterStatus'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterStatus'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterStatus'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterStatus'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterStatus'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterStatus'
+    put:
+      tags:
+      - MatterStatuses
+      summary: Updates one Matter Status
+      operationId: MatterStatuses_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterStatusId
+        in: path
+        description: The Id of the Matter Status.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterStatus'
+        description: GranicusMatterStatus object to be updated. Note that MatterStatusID is not required to be set.
+        required: true
+    delete:
+      tags:
+      - MatterStatuses
+      summary: Deletes one Matter Status
+      operationId: MatterStatuses_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterStatusId
+        in: path
+        description: The Id of the Matter Status.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterStatus:
+      required:
+      - matterStatusName
+      type: object
+      properties:
+        matterStatusId:
+          format: int32
+          type: integer
+        matterStatusGuid:
+          type: string
+        matterStatusLastModifiedUtc:
+          format: date-time
+          type: string
+        matterStatusRowVersion:
+          format: byte
+          type: string
+        matterStatusName:
+          type: string
+        matterStatusSort:
+          format: int32
+          type: integer
+        matterStatusActiveFlag:
+          format: int32
+          type: integer
+        matterStatusDescription:
+          type: string
+        matterStatusUsedFlag:
+          format: int32
+          type: integer
+        matterStatusPublicFlag:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

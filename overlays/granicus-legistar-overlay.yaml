@@ -1,0 +1,493 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist overlay for Granicus Legistar Web API
+  version: 1.0.0
+extends: ../openapi/_original/granicus-legistar-openapi.yml
+x-generated: '2026-10-18'
+x-method: generated
+x-source: https://webapi.legistar.com/Home/Examples
+x-rationale: 'The captured spec has no securitySchemes and no query parameters for OData paging/filtering, both documented on the Legistar Examples page. This overlay adds them without mutating the original. Note: the spec reuses some operationIds (e.g. MatterIndexes_GetAllForMatter, MatterIndexes_Put, MatterIndexes_Delete) on two paths.'
+actions:
+- target: $.components
+  description: Add the optional Legistar `token` URL parameter documented on the Examples page.
+  update:
+    securitySchemes:
+      legistarToken:
+        type: apiKey
+        in: query
+        name: token
+        description: 'Some Legistar clients require an API token, provided as a URL parameter (?token=...). Read-only calls for most clients need none. Source: https://webapi.legistar.com/Home/Examples'
+- target: $
+  description: Make the token optional at the root (empty requirement = anonymous allowed).
+  update:
+    security:
+    - {}
+    - legistarToken: []
+- target: $.info
+  description: Document documented query limits.
+  update:
+    x-result-limit: 1000
+    x-query-language: OData v3 URL conventions ($filter, $top, $skip, $orderby)
+    x-source: https://webapi.legistar.com/Home/Examples
+- target: $.paths['/v1/{Client}/Actions'].get.parameters
+  description: Add documented OData paging/filter parameters to Actions_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Bodies'].get.parameters
+  description: Add documented OData paging/filter parameters to Bodies_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/BodyTypes'].get.parameters
+  description: Add documented OData paging/filter parameters to BodyTypes_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/CodeSections'].get.parameters
+  description: Add documented OData paging/filter parameters to CodeSections_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Events/{EventId}/EventItems'].get.parameters
+  description: Add documented OData paging/filter parameters to EventItems_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Events'].get.parameters
+  description: Add documented OData paging/filter parameters to Events_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Indexes'].get.parameters
+  description: Add documented OData paging/filter parameters to Indexes_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Matters/{MatterId}/Attachments'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterAttachments_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Matters/{MatterId}/CodeSections'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterCodeSections_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Matters/{MatterId}/Histories'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterHistories_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/MatterIndexes'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterIndexes_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Matters/{MatterId}/Relations'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterRelations_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Matters/{MatterId}/Sponsors'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterSponsors_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/MatterStatuses'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterStatuses_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/MatterTypes'].get.parameters
+  description: Add documented OData paging/filter parameters to MatterTypes_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Matters'].get.parameters
+  description: Add documented OData paging/filter parameters to Matters_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/OfficeRecords'].get.parameters
+  description: Add documented OData paging/filter parameters to OfficeRecords_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/Persons'].get.parameters
+  description: Add documented OData paging/filter parameters to Persons_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/EventItems/{EventItemId}/RollCalls'].get.parameters
+  description: Add documented OData paging/filter parameters to RollCalls_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/VoteTypes'].get.parameters
+  description: Add documented OData paging/filter parameters to VoteTypes_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.
+- target: $.paths['/v1/{Client}/EventItems/{EventItemId}/Votes'].get.parameters
+  description: Add documented OData paging/filter parameters to Votes_GetAll.
+  update:
+  - name: $top
+    in: query
+    required: false
+    schema:
+      type: integer
+      maximum: 1000
+    description: OData page size; replies are limited to 1000.
+  - name: $skip
+    in: query
+    required: false
+    schema:
+      type: integer
+    description: OData offset for paging.
+  - name: $filter
+    in: query
+    required: false
+    schema:
+      type: string
+    description: OData v3 filter, e.g. EventDate ge datetime'2014-09-01'.

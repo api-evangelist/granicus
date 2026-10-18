@@ -1,0 +1,492 @@
+openapi: 3.2.0
+info:
+  title: Granicus Event Items API
+  version: v1
+  description: 'Operations tagged EventItems across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: EventItems
+paths:
+  /v1/{Client}/Events/{EventId}/EventItems:
+    get:
+      tags:
+      - EventItems
+      summary: Gets all Event Items under a particular Event
+      operationId: EventItems_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventId
+        in: path
+        description: The Id of the Event.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: AgendaNote
+        in: query
+        description: An optional parameter that specifies whether the agenda note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: MinutesNote
+        in: query
+        description: An optional parameter that specifies whether the minutes note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: Attachments
+        in: query
+        description: An optional parameter that specifies whether the event items' attachments should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusEventItem'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusEventItem'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusEventItem'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusEventItem'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusEventItem'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusEventItem'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusEventItem'
+    post:
+      tags:
+      - EventItems
+      summary: Adds one Event Item
+      operationId: EventItems_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventId
+        in: path
+        description: The Id of the Event.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+        description: GranicusEventItem object to be inserted. Note that EventItemID is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Events/{EventId}/EventItems/{EventItemId}:
+    get:
+      tags:
+      - EventItems
+      summary: Gets one Event Item
+      operationId: EventItems_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventId
+        in: path
+        description: The Id of the Event.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: AgendaNote
+        in: query
+        description: An optional parameter that specifies whethere the agenda note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: MinutesNote
+        in: query
+        description: An optional parameter that specifies whethere the minutes note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: Attachments
+        in: query
+        description: An optional parameter that specifies whether the event items' attachments should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusEventItem'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusEventItem'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusEventItem'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusEventItem'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusEventItem'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusEventItem'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusEventItem'
+    put:
+      tags:
+      - EventItems
+      summary: Updates one Event Item
+      operationId: EventItems_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventId
+        in: path
+        description: The Id of the Event.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusEventItem'
+        description: GranicusEventItem object to be updated. Note that EventItemID is not required to be set.
+        required: true
+    delete:
+      tags:
+      - EventItems
+      summary: Deletes one Event Item
+      operationId: EventItems_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: EventId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusEventItem:
+      type: object
+      properties:
+        eventItemId:
+          format: int32
+          type: integer
+        eventItemGuid:
+          type: string
+        eventItemLastModifiedUtc:
+          format: date-time
+          type: string
+        eventItemRowVersion:
+          format: byte
+          type: string
+        eventItemEventId:
+          format: int32
+          type: integer
+        eventItemAgendaSequence:
+          format: int32
+          type: integer
+        eventItemMinutesSequence:
+          format: int32
+          type: integer
+        eventItemAgendaNumber:
+          type: string
+        eventItemVideo:
+          format: int32
+          type: integer
+        eventItemVideoIndex:
+          format: int32
+          type: integer
+        eventItemVersion:
+          type: string
+        eventItemAgendaNote:
+          type: string
+        eventItemMinutesNote:
+          type: string
+        eventItemActionId:
+          format: int32
+          type: integer
+        eventItemActionName:
+          type: string
+        eventItemActionText:
+          type: string
+        eventItemPassedFlag:
+          format: int32
+          type: integer
+        eventItemPassedFlagName:
+          type: string
+        eventItemRollCallFlag:
+          format: int32
+          type: integer
+        eventItemFlagExtra:
+          format: int32
+          type: integer
+        eventItemTitle:
+          type: string
+        eventItemTally:
+          type: string
+        eventItemAccelaRecordId:
+          type: string
+        eventItemConsent:
+          format: int32
+          type: integer
+        eventItemMoverId:
+          format: int32
+          type: integer
+        eventItemMover:
+          type: string
+        eventItemSeconderId:
+          format: int32
+          type: integer
+        eventItemSeconder:
+          type: string
+        eventItemMatterId:
+          format: int32
+          type: integer
+        eventItemMatterGuid:
+          type: string
+        eventItemMatterFile:
+          type: string
+        eventItemMatterName:
+          type: string
+        eventItemMatterType:
+          type: string
+        eventItemMatterStatus:
+          type: string
+        eventItemMatterAttachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/GranicusMatterAttachment'
+    GranicusMatterAttachment:
+      required:
+      - matterAttachmentName
+      type: object
+      properties:
+        matterAttachmentId:
+          format: int32
+          type: integer
+        matterAttachmentGuid:
+          type: string
+        matterAttachmentLastModifiedUtc:
+          format: date-time
+          type: string
+        matterAttachmentRowVersion:
+          format: byte
+          type: string
+        matterAttachmentName:
+          type: string
+        matterAttachmentHyperlink:
+          type: string
+        matterAttachmentFileName:
+          type: string
+        matterAttachmentMatterVersion:
+          type: string
+        matterAttachmentIsHyperlink:
+          type: boolean
+        matterAttachmentBinary:
+          format: byte
+          type: string
+        matterAttachmentIsSupportingDocument:
+          type: boolean
+        matterAttachmentShowOnInternetPage:
+          type: boolean
+        matterAttachmentIsMinuteOrder:
+          type: boolean
+        matterAttachmentIsBoardLetter:
+          type: boolean
+        matterAttachmentAgiloftId:
+          format: int32
+          type: integer
+        matterAttachmentDescription:
+          type: string
+        matterAttachmentPrintWithReports:
+          type: boolean
+        matterAttachmentSort:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

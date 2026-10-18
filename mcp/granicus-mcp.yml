@@ -1,0 +1,288 @@
+name: Granicus Legistar MCP (candidate)
+type: MCPServer
+generated: '2026-10-18'
+method: derived
+source: openapi/granicus-legistar-openapi.yml; search "Granicus Legistar MCP server" (2026-10-18) found no official or hosted Granicus MCP server
+status: candidate
+deployment:
+  mode: none
+  auth: api-key
+  verified: derived
+  note: No Granicus MCP server exists to our knowledge. Tools below are a candidate set DERIVED from the read-only (GET) operations of the Legistar Web API. Legistar auth is an optional per-client `token` URL parameter (see https://webapi.legistar.com/Home/Examples).
+base_url: https://webapi.legistar.com
+conventions:
+  path_parameter: '{Client} = the Legistar client (jurisdiction) name'
+  paging: OData $top/$skip; replies limited to 1000 results
+  filtering: OData v3 $filter
+  source: https://webapi.legistar.com/Home/Examples
+tools:
+- name: legistar_actions_get
+  operation: Actions_Get
+  method: GET
+  path: /v1/{Client}/Actions/{ActionId}
+  description: Gets one Action.
+- name: legistar_actions_get_all
+  operation: Actions_GetAll
+  method: GET
+  path: /v1/{Client}/Actions
+  description: Gets all Actions.
+- name: legistar_bodies_get
+  operation: Bodies_Get
+  method: GET
+  path: /v1/{Client}/Bodies/{BodyId}
+  description: Gets one Body.
+- name: legistar_bodies_get_all
+  operation: Bodies_GetAll
+  method: GET
+  path: /v1/{Client}/Bodies
+  description: Gets all Bodies.
+- name: legistar_body_types_get
+  operation: BodyTypes_Get
+  method: GET
+  path: /v1/{Client}/BodyTypes/{BodyTypeId}
+  description: Gets one Body Type.
+- name: legistar_body_types_get_all
+  operation: BodyTypes_GetAll
+  method: GET
+  path: /v1/{Client}/BodyTypes
+  description: Gets all Body Types.
+- name: legistar_code_sections_get
+  operation: CodeSections_Get
+  method: GET
+  path: /v1/{Client}/CodeSections/{CodeSectionId}
+  description: Gets one Code Section.
+- name: legistar_code_sections_get_all
+  operation: CodeSections_GetAll
+  method: GET
+  path: /v1/{Client}/CodeSections
+  description: Gets all Code Sections.
+- name: legistar_event_items_get
+  operation: EventItems_Get
+  method: GET
+  path: /v1/{Client}/Events/{EventId}/EventItems/{EventItemId}
+  description: Gets one Event Item.
+- name: legistar_event_items_get_all
+  operation: EventItems_GetAll
+  method: GET
+  path: /v1/{Client}/Events/{EventId}/EventItems
+  description: Gets all Event Items under a particular Event.
+- name: legistar_events_get
+  operation: Events_Get
+  method: GET
+  path: /v1/{Client}/Events/{EventId}
+  description: Gets one Event.
+- name: legistar_events_get_all
+  operation: Events_GetAll
+  method: GET
+  path: /v1/{Client}/Events
+  description: Gets all Events.
+- name: legistar_events_get_event_dates_by_body_id
+  operation: Events_GetEventDatesByBodyId
+  method: GET
+  path: /v1/{Client}/EventDates/{BodyId}
+  description: Gets Event Dates by BodyID.
+- name: legistar_indexes_get
+  operation: Indexes_Get
+  method: GET
+  path: /v1/{Client}/Indexes/{IndexId}
+  description: Gets one Index.
+- name: legistar_indexes_get_all
+  operation: Indexes_GetAll
+  method: GET
+  path: /v1/{Client}/Indexes
+  description: Gets all Indexes.
+- name: legistar_matter_attachments_get
+  operation: MatterAttachments_Get
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}
+  description: Gets one available for Internet viewing Matter Attachment.
+- name: legistar_matter_attachments_get_all
+  operation: MatterAttachments_GetAll
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Attachments
+  description: Gets all available for Internet viewing Matter Attachments for one Matter record.
+- name: legistar_matter_attachments_get_file
+  operation: MatterAttachments_GetFile
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}/File
+  description: Gets the file content for one Matter Attachment.
+- name: legistar_matter_code_sections_get
+  operation: MatterCodeSections_Get
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/CodeSections/{MatterCodeSectionId}
+  description: Gets one Matter Code Section.
+- name: legistar_matter_code_sections_get_all
+  operation: MatterCodeSections_GetAll
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/CodeSections
+  description: Gets all Matter CodeSections for one Matter record.
+- name: legistar_matter_histories_get
+  operation: MatterHistories_Get
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Histories/{MatterHistoryId}
+  description: Gets one Matter History record.
+- name: legistar_matter_histories_get_all
+  operation: MatterHistories_GetAll
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Histories
+  description: Gets all Matter History records under a particular Matter.
+- name: legistar_matter_indexes_get
+  operation: MatterIndexes_Get
+  method: GET
+  path: /v1/{Client}/MatterIndexes/{MatterIndexId}
+  description: Gets one Matter Index.
+- name: legistar_matter_indexes_get_all
+  operation: MatterIndexes_GetAll
+  method: GET
+  path: /v1/{Client}/MatterIndexes
+  description: Gets all Matter Indexes.
+- name: legistar_matter_indexes_get_all_for_index_i_d
+  operation: MatterIndexes_GetAllForIndexID
+  method: GET
+  path: /v1/{Client}/MatterIndexes/Index/{IndexId}
+  description: Gets all Matter Indexes for one IndexID.
+- name: legistar_matter_indexes_get_all_for_matter
+  operation: MatterIndexes_GetAllForMatter
+  method: GET
+  path: /v1/{Client}/MatterIndexes/Matter/{MatterId}
+  description: Gets all Matter Indexes for one Matter record.
+- name: legistar_matter_indexes_get_by_matter_and_id
+  operation: MatterIndexes_GetByMatterAndId
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Indexes/{MatterIndexId}
+  description: Gets one Matter Index associated with a specific Matter.
+- name: legistar_matter_relations_get
+  operation: MatterRelations_Get
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Relations/{MatterRelationId}
+  description: Gets one Matter Relation.
+- name: legistar_matter_relations_get_all
+  operation: MatterRelations_GetAll
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Relations
+  description: Gets all Matter Relations for one Matter record.
+- name: legistar_matter_requesters_get_requesters
+  operation: MatterRequesters_GetRequesters
+  method: GET
+  path: /v1/{Client}/MatterRequesters
+  description: Gets all Matter Requesters.
+- name: legistar_matter_sponsors_get
+  operation: MatterSponsors_Get
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Sponsors/{MatterSponsorId}
+  description: Gets one Matter Sponsor for one Matter record.
+- name: legistar_matter_sponsors_get_all
+  operation: MatterSponsors_GetAll
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Sponsors
+  description: Gets all Matter Sponsors for one Matter record.
+- name: legistar_matter_statuses_get
+  operation: MatterStatuses_Get
+  method: GET
+  path: /v1/{Client}/MatterStatuses/{MatterStatusId}
+  description: Gets one Matter Status.
+- name: legistar_matter_statuses_get_all
+  operation: MatterStatuses_GetAll
+  method: GET
+  path: /v1/{Client}/MatterStatuses
+  description: Gets all Matter Statuses.
+- name: legistar_matter_texts_get
+  operation: MatterTexts_Get
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Texts/{MatterTextId}
+  description: Gets one Matter Text.
+- name: legistar_matter_texts_get_versions
+  operation: MatterTexts_GetVersions
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}/Versions
+  description: Gets Matter Text versions for one Matter record.
+- name: legistar_matter_types_get
+  operation: MatterTypes_Get
+  method: GET
+  path: /v1/{Client}/MatterTypes/{MatterTypeId}
+  description: Gets one Matter Type.
+- name: legistar_matter_types_get_all
+  operation: MatterTypes_GetAll
+  method: GET
+  path: /v1/{Client}/MatterTypes
+  description: Gets all Matter Types.
+- name: legistar_matters_get
+  operation: Matters_Get
+  method: GET
+  path: /v1/{Client}/Matters/{MatterId}
+  description: Gets one Matter.
+- name: legistar_matters_get_all
+  operation: Matters_GetAll
+  method: GET
+  path: /v1/{Client}/Matters
+  description: Gets all Matters.
+- name: legistar_office_records_get
+  operation: OfficeRecords_Get
+  method: GET
+  path: /v1/{Client}/OfficeRecords/{OfficeRecordId}
+  description: Gets one Office Record.
+- name: legistar_office_records_get_all
+  operation: OfficeRecords_GetAll
+  method: GET
+  path: /v1/{Client}/OfficeRecords
+  description: Gets all Office Records.
+- name: legistar_office_records_get_by_body_id
+  operation: OfficeRecords_GetByBodyId
+  method: GET
+  path: /v1/{Client}/Bodies/{BodyId}/OfficeRecords
+  description: Gets Office Records for a Body record.
+- name: legistar_office_records_get_by_name_id
+  operation: OfficeRecords_GetByNameId
+  method: GET
+  path: /v1/{Client}/Persons/{PersonId}/OfficeRecords
+  description: Gets Office Records for a Person record.
+- name: legistar_persons_get
+  operation: Persons_Get
+  method: GET
+  path: /v1/{Client}/Persons/{PersonId}
+  description: Gets one Person.
+- name: legistar_persons_get_all
+  operation: Persons_GetAll
+  method: GET
+  path: /v1/{Client}/Persons
+  description: Gets all Persons.
+- name: legistar_roll_calls_get
+  operation: RollCalls_Get
+  method: GET
+  path: /v1/{Client}/EventItems/{EventItemId}/RollCalls/{RollCallId}
+  description: Gets one Roll Call Item.
+- name: legistar_roll_calls_get_all
+  operation: RollCalls_GetAll
+  method: GET
+  path: /v1/{Client}/EventItems/{EventItemId}/RollCalls
+  description: Gets all Roll Call Items under a particular Event Item.
+- name: legistar_roll_calls_get_by_name_id
+  operation: RollCalls_GetByNameId
+  method: GET
+  path: /v1/{Client}/Persons/{PersonId}/RollCalls
+  description: Gets all Roll Call records for a Person.
+- name: legistar_vote_types_get
+  operation: VoteTypes_Get
+  method: GET
+  path: /v1/{Client}/VoteTypes/{VoteTypeId}
+  description: Gets one Vote Type.
+- name: legistar_vote_types_get_all
+  operation: VoteTypes_GetAll
+  method: GET
+  path: /v1/{Client}/VoteTypes
+  description: Gets all Vote Types.
+- name: legistar_votes_get
+  operation: Votes_Get
+  method: GET
+  path: /v1/{Client}/EventItems/{EventItemId}/Votes/{VoteId}
+  description: Gets one Vote Item.
+- name: legistar_votes_get_all
+  operation: Votes_GetAll
+  method: GET
+  path: /v1/{Client}/EventItems/{EventItemId}/Votes
+  description: Gets all Vote Items under a particular Event Item.
+- name: legistar_votes_get_by_name_id
+  operation: Votes_GetByNameId
+  method: GET
+  path: /v1/{Client}/Persons/{PersonId}/Votes
+  description: Gets all Vote records for a Person.

@@ -1,0 +1,21 @@
+generated: '2026-10-18'
+method: none
+source:
+- https://zapier.com/apps/granicus/integrations
+- https://n8n.io/integrations/granicus/
+- https://composio.dev/toolkits/granicus
+- https://monid.ai/tools/granicus
+checked:
+- https://composio.dev/toolkits/granicus
+- https://developers.govdelivery.com
+- https://granicus.com
+- https://make.com/en/integrations/granicus
+- https://monid.ai/tools/granicus
+- https://n8n.io/integrations/granicus/
+- https://zapier.com/apps/granicus/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
+note: No integration marketplace listings or documented partner integrations found for Granicus APIs. Granicus appears
+  to be primarily a platform provider rather than integrating with third-party services.

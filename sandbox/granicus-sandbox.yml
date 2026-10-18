@@ -1,0 +1,6 @@
+generated: '2026-10-18'
+method: searched
+source: https://developers.govdelivery.com/api/tms/overview/Authentication_Token/
+description: GovDelivery TMS provides separate staging and production environments for testing. The staging environment (stage-tms.govdelivery.com) is used during development phase for sending test messages and load testing applications.
+docs: https://developers.govdelivery.com/api/tms/overview/Authentication_Token/
+note: Each environment (staging and production) has unique authentication tokens. Testing is recommended in staging environment before moving to production.

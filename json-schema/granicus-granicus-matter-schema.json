@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/granicus/main/json-schema/granicus-granicus-matter-schema.json",
+  "title": "GranicusMatter",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusMatter",
+  "required": [
+    "matterTypeId",
+    "matterStatusId",
+    "matterBodyId"
+  ],
+  "type": "object",
+  "properties": {
+    "matterId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "matterGuid": {
+      "type": "string"
+    },
+    "matterLastModifiedUtc": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterRowVersion": {
+      "format": "byte",
+      "type": "string"
+    },
+    "matterFile": {
+      "type": "string"
+    },
+    "matterName": {
+      "type": "string"
+    },
+    "matterTitle": {
+      "type": "string"
+    },
+    "matterTypeId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "matterTypeName": {
+      "type": "string"
+    },
+    "matterStatusId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "matterStatusName": {
+      "type": "string"
+    },
+    "matterBodyId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "matterBodyName": {
+      "type": "string"
+    },
+    "matterIntroDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterAgendaDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterPassedDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEnactmentDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEnactmentNumber": {
+      "type": "string"
+    },
+    "matterRequester": {
+      "type": "string"
+    },
+    "matterNotes": {
+      "type": "string"
+    },
+    "matterVersion": {
+      "type": "string"
+    },
+    "matterCost": {
+      "format": "double",
+      "type": "number"
+    },
+    "matterText1": {
+      "type": "string"
+    },
+    "matterText2": {
+      "type": "string"
+    },
+    "matterText3": {
+      "type": "string"
+    },
+    "matterText4": {
+      "type": "string"
+    },
+    "matterText5": {
+      "type": "string"
+    },
+    "matterDate1": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterDate2": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXText1": {
+      "type": "string"
+    },
+    "matterEXText2": {
+      "type": "string"
+    },
+    "matterEXText3": {
+      "type": "string"
+    },
+    "matterEXText4": {
+      "type": "string"
+    },
+    "matterEXText5": {
+      "type": "string"
+    },
+    "matterEXText6": {
+      "type": "string"
+    },
+    "matterEXText7": {
+      "type": "string"
+    },
+    "matterEXText8": {
+      "type": "string"
+    },
+    "matterEXText9": {
+      "type": "string"
+    },
+    "matterEXText10": {
+      "type": "string"
+    },
+    "matterEXText11": {
+      "type": "string"
+    },
+    "matterEXDate1": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate2": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate3": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate4": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate5": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate6": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate7": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate8": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate9": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterEXDate10": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "matterAgiloftId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "matterReference": {
+      "type": "string"
+    },
+    "matterRestrictViewViaWeb": {
+      "type": "boolean"
+    },
+    "matterReports": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/GranicusMatterReport"
+      },
+      "readOnly": true
+    }
+  },
+  "$defs": {
+    "GranicusMatterReport": {
+      "type": "object",
+      "properties": {
+        "reportName": {
+          "type": "string"
+        },
+        "reportURL": {
+          "type": "string"
+        },
+        "reportType": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

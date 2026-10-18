@@ -1,0 +1,39 @@
+generated: '2026-10-18'
+method: generated
+generator: extract-docs-artifacts.py skills (deepseek)
+source: openapi/granicus-legistar-openapi.yml
+skills:
+- file: skills/granicus-create-update-matter.md
+  name: granicus-create-update-matter
+  api: openapi/granicus-legistar-openapi.yml
+  operations:
+  - Matters_Get
+  - Matters_Put
+  - Matters_Post
+- file: skills/granicus-manage-person.md
+  name: granicus-manage-person
+  api: openapi/granicus-legistar-openapi.yml
+  operations:
+  - Persons_Post
+  - Persons_Get
+  - Persons_Put
+  - Persons_Delete
+  - Persons_GetAll
+- file: skills/granicus-manage-event-item-votes.md
+  name: granicus-manage-event-item-votes
+  api: openapi/granicus-legistar-openapi.yml
+  operations:
+  - Votes_Post
+  - Votes_GetAll
+  - Votes_Get
+  - Votes_Put
+  - Votes_Delete
+- file: skills/granicus-manage-actions.md
+  name: granicus-manage-actions
+  api: openapi/granicus-legistar-openapi.yml
+  operations:
+  - Actions_Post
+  - Actions_Get
+  - Actions_Put
+  - Actions_Delete
+  - Actions_GetAll

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/granicus/main/json-schema/granicus-granicus-office-record-schema.json",
+  "title": "GranicusOfficeRecord",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusOfficeRecord",
+  "required": [
+    "officeRecordStartDate",
+    "officeRecordPersonId",
+    "officeRecordBodyId",
+    "officeRecordVoteDivider",
+    "officeRecordExtendFlag",
+    "officeRecordMemberTypeId"
+  ],
+  "type": "object",
+  "properties": {
+    "officeRecordId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "officeRecordGuid": {
+      "type": "string"
+    },
+    "officeRecordLastModifiedUtc": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "officeRecordRowVersion": {
+      "format": "byte",
+      "type": "string"
+    },
+    "officeRecordFirstName": {
+      "type": "string"
+    },
+    "officeRecordLastName": {
+      "type": "string"
+    },
+    "officeRecordEmail": {
+      "type": "string"
+    },
+    "officeRecordFullName": {
+      "type": "string"
+    },
+    "officeRecordStartDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "officeRecordEndDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "officeRecordSort": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "officeRecordPersonId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "officeRecordBodyId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "officeRecordBodyName": {
+      "type": "string"
+    },
+    "officeRecordTitle": {
+      "type": "string"
+    },
+    "officeRecordVoteDivider": {
+      "format": "double",
+      "type": "number"
+    },
+    "officeRecordExtendFlag": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "officeRecordMemberTypeId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "officeRecordMemberType": {
+      "type": "string"
+    },
+    "officeRecordSupportNameId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "officeRecordSupportFullName": {
+      "type": "string"
+    },
+    "officeRecordExtraText": {
+      "type": "string"
+    }
+  }
+}

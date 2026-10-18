@@ -1,0 +1,74 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Requesters API
+  version: v1
+  description: 'Operations tagged MatterRequesters across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterRequesters
+paths:
+  /v1/{Client}/MatterRequesters:
+    get:
+      tags:
+      - MatterRequesters
+      summary: Gets all Matter Requesters
+      operationId: MatterRequesters_GetRequesters
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRequester'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRequester'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRequester'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRequester'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRequester'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRequester'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRequester'
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterRequester:
+      type: object
+      properties:
+        matterRequesterName:
+          type: string
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

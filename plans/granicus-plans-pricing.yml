@@ -1,0 +1,12 @@
+generated: '2026-10-18'
+method: searched
+name: Granicus pricing
+source: https://granicus.com
+audience: business-product
+pricing_basis: negotiated
+published: false
+delivery:
+  delivery: managed
+  evidence: Granicus provides SaaS solutions for government organizations
+plans: []
+note: No public pricing information found. Granicus appears to use enterprise/negotiated pricing model for government clients. Pricing likely varies based on government size, requirements, and specific products/services needed.

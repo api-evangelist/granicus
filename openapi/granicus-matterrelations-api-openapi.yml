@@ -1,0 +1,330 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Relations API
+  version: v1
+  description: 'Operations tagged MatterRelations across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterRelations
+paths:
+  /v1/{Client}/Matters/{MatterId}/Relations:
+    get:
+      tags:
+      - MatterRelations
+      summary: Gets all Matter Relations for one Matter record
+      operationId: MatterRelations_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRelation'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRelation'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRelation'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRelation'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRelation'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRelation'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterRelation'
+    post:
+      tags:
+      - MatterRelations
+      summary: Adds one Matter Relation
+      operationId: MatterRelations_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+        description: GranicusMatterRelation object to be inserted. Note that MatterRelationId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Relations/{MatterRelationId}:
+    get:
+      tags:
+      - MatterRelations
+      summary: Gets one Matter Relation
+      operationId: MatterRelations_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterRelationId
+        in: path
+        description: The MatterRelationId of the Matter Relation.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterRelation'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterRelation'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterRelation'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterRelation'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterRelation'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterRelation'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterRelation'
+    put:
+      tags:
+      - MatterRelations
+      summary: Updates one Matter Relation
+      operationId: MatterRelations_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterRelationId
+        in: path
+        description: The MatterRelationId of the Matter Relation.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterRelation'
+        description: GranicusMatterRelation object to be updated. Note that MatterRelationId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - MatterRelations
+      summary: Deletes one Matter Relation
+      operationId: MatterRelations_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterRelationId
+        in: path
+        description: The MatterRelationId of the Matter Relation.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterRelation:
+      required:
+      - matterRelationMatterId
+      type: object
+      properties:
+        matterRelationId:
+          format: int32
+          type: integer
+        matterRelationGuid:
+          type: string
+        matterRelationLastModifiedUtc:
+          format: date-time
+          type: string
+        matterRelationRowVersion:
+          format: byte
+          type: string
+        matterRelationMatterId:
+          format: int32
+          type: integer
+        matterRelationFlag:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

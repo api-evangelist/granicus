@@ -1,0 +1,410 @@
+openapi: 3.2.0
+info:
+  title: Granicus Roll Calls API
+  version: v1
+  description: 'Operations tagged RollCalls across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: RollCalls
+paths:
+  /v1/{Client}/EventItems/{EventItemId}/RollCalls:
+    get:
+      tags:
+      - RollCalls
+      summary: Gets all Roll Call Items under a particular Event Item
+      operationId: RollCalls_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+    post:
+      tags:
+      - RollCalls
+      summary: Adds one Roll Call Item
+      operationId: RollCalls_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+        description: GranicusRollCall object to be inserted. Note that RollCallId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/EventItems/{EventItemId}/RollCalls/{RollCallId}:
+    get:
+      tags:
+      - RollCalls
+      summary: Gets one Roll Call Item
+      operationId: RollCalls_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: RollCallId
+        in: path
+        description: The Id of the Roll Call Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusRollCall'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusRollCall'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusRollCall'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusRollCall'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusRollCall'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusRollCall'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusRollCall'
+    put:
+      tags:
+      - RollCalls
+      summary: Updates one Roll Call Item
+      operationId: RollCalls_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: RollCallId
+        in: path
+        description: The Id of the Roll Call Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusRollCall'
+        description: GranicusRollCall object to be updated. Note that RollCallId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - RollCalls
+      summary: Deletes one Roll Call Item
+      operationId: RollCalls_Delete
+      parameters:
+      - name: Client
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: EventItemId
+        in: path
+        description: The Id of the Event Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: RollCallId
+        in: path
+        description: The Id of the Roll Call Item.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Persons/{PersonId}/RollCalls:
+    get:
+      tags:
+      - RollCalls
+      summary: Gets all Roll Call records for a Person
+      operationId: RollCalls_GetByNameId
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: PersonId
+        in: path
+        description: The Id of the person record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusRollCall'
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusRollCall:
+      required:
+      - rollCallPersonId
+      - rollCallValueId
+      type: object
+      properties:
+        rollCallId:
+          format: int32
+          type: integer
+        rollCallGuid:
+          type: string
+        rollCallLastModifiedUtc:
+          format: date-time
+          type: string
+        rollCallRowVersion:
+          format: byte
+          type: string
+        rollCallPersonId:
+          format: int32
+          type: integer
+        rollCallPersonName:
+          type: string
+        rollCallValueId:
+          format: int32
+          type: integer
+        rollCallValueName:
+          type: string
+        rollCallSort:
+          format: int32
+          type: integer
+        rollCallResult:
+          format: int32
+          type: integer
+        rollCallEventItemId:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

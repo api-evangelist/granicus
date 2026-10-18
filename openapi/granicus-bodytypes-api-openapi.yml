@@ -1,0 +1,300 @@
+openapi: 3.2.0
+info:
+  title: Granicus Body Types API
+  version: v1
+  description: 'Operations tagged BodyTypes across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: BodyTypes
+paths:
+  /v1/{Client}/BodyTypes:
+    get:
+      tags:
+      - BodyTypes
+      summary: Gets all Body Types
+      operationId: BodyTypes_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusBodyType'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusBodyType'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusBodyType'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusBodyType'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusBodyType'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusBodyType'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusBodyType'
+    post:
+      tags:
+      - BodyTypes
+      summary: Adds one Body Type
+      operationId: BodyTypes_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+        description: GranicusBodyType object to be inserted. Note that BodyTypeId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/BodyTypes/{BodyTypeId}:
+    get:
+      tags:
+      - BodyTypes
+      summary: Gets one Body Type
+      operationId: BodyTypes_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: BodyTypeId
+        in: path
+        description: The Id of the Body Type.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusBodyType'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusBodyType'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusBodyType'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusBodyType'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusBodyType'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusBodyType'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusBodyType'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/BodyTypes/{Id}:
+    put:
+      tags:
+      - BodyTypes
+      summary: Updates one Body Type
+      operationId: BodyTypes_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        description: The Id of the Body Type.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusBodyType'
+        description: GranicusBodyType object to be updated. Note that BodyTypeId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - BodyTypes
+      summary: Deletes one Body Type
+      operationId: BodyTypes_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        description: The Id of the Body Type.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusBodyType:
+      required:
+      - bodyTypeName
+      type: object
+      properties:
+        bodyTypeId:
+          format: int32
+          type: integer
+        bodyTypeGuid:
+          type: string
+        bodyTypeLastModifiedUtc:
+          format: date-time
+          type: string
+        bodyTypeRowVersion:
+          format: byte
+          type: string
+        bodyTypeName:
+          type: string
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

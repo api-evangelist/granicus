@@ -1,0 +1,430 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matters API
+  version: v1
+  description: 'Operations tagged Matters across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: Matters
+paths:
+  /v1/{Client}/Matters:
+    get:
+      tags:
+      - Matters
+      summary: Gets all Matters
+      operationId: Matters_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatter'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatter'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatter'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatter'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatter'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatter'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatter'
+    post:
+      tags:
+      - Matters
+      summary: Adds one Matter
+      operationId: Matters_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+        description: GranicusMatter object to be inserted. Note that MatterID is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}:
+    get:
+      tags:
+      - Matters
+      summary: Gets one Matter
+      operationId: Matters_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatter'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatter'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatter'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatter'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatter'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatter'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatter'
+    put:
+      tags:
+      - Matters
+      summary: Updates one Matter
+      operationId: Matters_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatter'
+        description: GranicusMatter object to be updated. Note that MatterID is not required to be set.
+        required: true
+    delete:
+      tags:
+      - Matters
+      summary: Deletes one Matter
+      operationId: Matters_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterReport:
+      type: object
+      properties:
+        reportName:
+          type: string
+        reportURL:
+          type: string
+        reportType:
+          type: string
+    GranicusMatter:
+      required:
+      - matterTypeId
+      - matterStatusId
+      - matterBodyId
+      type: object
+      properties:
+        matterId:
+          format: int32
+          type: integer
+        matterGuid:
+          type: string
+        matterLastModifiedUtc:
+          format: date-time
+          type: string
+        matterRowVersion:
+          format: byte
+          type: string
+        matterFile:
+          type: string
+        matterName:
+          type: string
+        matterTitle:
+          type: string
+        matterTypeId:
+          format: int32
+          type: integer
+        matterTypeName:
+          type: string
+        matterStatusId:
+          format: int32
+          type: integer
+        matterStatusName:
+          type: string
+        matterBodyId:
+          format: int32
+          type: integer
+        matterBodyName:
+          type: string
+        matterIntroDate:
+          format: date-time
+          type: string
+        matterAgendaDate:
+          format: date-time
+          type: string
+        matterPassedDate:
+          format: date-time
+          type: string
+        matterEnactmentDate:
+          format: date-time
+          type: string
+        matterEnactmentNumber:
+          type: string
+        matterRequester:
+          type: string
+        matterNotes:
+          type: string
+        matterVersion:
+          type: string
+        matterCost:
+          format: double
+          type: number
+        matterText1:
+          type: string
+        matterText2:
+          type: string
+        matterText3:
+          type: string
+        matterText4:
+          type: string
+        matterText5:
+          type: string
+        matterDate1:
+          format: date-time
+          type: string
+        matterDate2:
+          format: date-time
+          type: string
+        matterEXText1:
+          type: string
+        matterEXText2:
+          type: string
+        matterEXText3:
+          type: string
+        matterEXText4:
+          type: string
+        matterEXText5:
+          type: string
+        matterEXText6:
+          type: string
+        matterEXText7:
+          type: string
+        matterEXText8:
+          type: string
+        matterEXText9:
+          type: string
+        matterEXText10:
+          type: string
+        matterEXText11:
+          type: string
+        matterEXDate1:
+          format: date-time
+          type: string
+        matterEXDate2:
+          format: date-time
+          type: string
+        matterEXDate3:
+          format: date-time
+          type: string
+        matterEXDate4:
+          format: date-time
+          type: string
+        matterEXDate5:
+          format: date-time
+          type: string
+        matterEXDate6:
+          format: date-time
+          type: string
+        matterEXDate7:
+          format: date-time
+          type: string
+        matterEXDate8:
+          format: date-time
+          type: string
+        matterEXDate9:
+          format: date-time
+          type: string
+        matterEXDate10:
+          format: date-time
+          type: string
+        matterAgiloftId:
+          format: int32
+          type: integer
+        matterReference:
+          type: string
+        matterRestrictViewViaWeb:
+          type: boolean
+        matterReports:
+          type: array
+          items:
+            $ref: '#/components/schemas/GranicusMatterReport'
+          readOnly: true
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

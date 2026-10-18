@@ -1,0 +1,310 @@
+openapi: 3.2.0
+info:
+  title: Granicus Actions API
+  version: v1
+  description: 'Operations tagged Actions across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: Actions
+paths:
+  /v1/{Client}/Actions:
+    get:
+      tags:
+      - Actions
+      summary: Gets all Actions
+      operationId: Actions_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusAction'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusAction'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusAction'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusAction'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusAction'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusAction'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusAction'
+    post:
+      tags:
+      - Actions
+      summary: Adds one Action
+      description: 'Note: Do not provide the following properties in the Body of the Request: ActionId, ActionGuid, ActionLastModifiedUtc, ActionRowVersion. Only ActionName is a required property.'
+      operationId: Actions_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+        description: GranicusAction object to be inserted. Note that ActionID is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Actions/{ActionId}:
+    get:
+      tags:
+      - Actions
+      summary: Gets one Action
+      operationId: Actions_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: ActionId
+        in: path
+        description: The Id of the Action.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusAction'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusAction'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusAction'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusAction'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusAction'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusAction'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusAction'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Actions/{Id}:
+    put:
+      tags:
+      - Actions
+      summary: Updates one Action
+      description: 'Note: Do not provide the following properties in the Body of the Request: ActionGuid, ActionLastModifiedUtc, ActionRowVersion. ActionID is required to be set.'
+      operationId: Actions_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        description: The Id of the Action.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusAction'
+        description: GranicusAction object to be updated. Note that ActionID is required to be set.
+        required: true
+    delete:
+      tags:
+      - Actions
+      summary: Deletes one Action
+      operationId: Actions_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: Id
+        in: path
+        description: The Id of the Action.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusAction:
+      required:
+      - actionName
+      type: object
+      properties:
+        actionId:
+          format: int32
+          type: integer
+        actionGuid:
+          type: string
+        actionLastModifiedUtc:
+          format: date-time
+          type: string
+        actionRowVersion:
+          format: byte
+          type: string
+        actionName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        actionActiveFlag:
+          format: int32
+          type: integer
+        actionUsedFlag:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

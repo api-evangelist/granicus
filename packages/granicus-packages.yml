@@ -1,0 +1,79 @@
+generated: '2026-10-18'
+method: searched
+source: https://github.com/Granicus, https://registry.npmjs.org/-/v1/search?text=granicus, https://rubygems.org/api/v1/search.json?query=granicus
+packages:
+- name: granicus-platform-api
+  registry: rubygems
+  url: https://rubygems.org/gems/granicus-platform-api
+  language: Ruby
+  official: false
+  version: null
+  published: null
+  note: Ruby wrapper for Granicus Open Platform API v1.x, found on RubyGems but registry metadata endpoint not accessible
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: granicus_migrate
+  registry: rubygems
+  url: https://rubygems.org/gems/granicus_migrate
+  language: Ruby
+  official: false
+  version: null
+  published: null
+  note: Tool to mass-import files from old Webcasting.com customers to Granicus Platform
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: omniauth-granicus
+  registry: rubygems
+  url: https://rubygems.org/gems/omniauth-granicus
+  language: Ruby
+  official: false
+  version: null
+  published: null
+  note: Granicus Admin strategy for OmniAuth
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: platform-api-net
+  registry: github
+  url: https://github.com/Granicus/platform-api-net
+  language: .NET
+  official: true
+  version: null
+  published: null
+  note: .NET SDK for the Platform SOAP API 1.x, hosted on GitHub
+- name: platform-api-java
+  registry: github
+  url: https://github.com/Granicus/platform-api-java
+  language: Java
+  official: true
+  version: null
+  published: null
+  note: Java Wrapper for the SOAP Platform API 1.x, hosted on GitHub
+- name: tms-client-clj
+  registry: github
+  url: https://github.com/Granicus/tms-client-clj
+  language: Clojure
+  official: true
+  version: null
+  published: null
+  note: TMS client in Clojure, hosted on GitHub
+- name: go-mailgun
+  registry: github
+  url: https://github.com/Granicus/go-mailgun
+  language: Go
+  official: true
+  version: null
+  published: null
+  note: Mailgun client in Go, hosted on GitHub
+- name: civic-data-adapters
+  registry: npm
+  url: https://www.npmjs.com/package/civic-data-adapters
+  language: TypeScript
+  official: false
+  version: null
+  published: null
+  note: TypeScript adapters for municipal and civic government data including Legistar
+- name: '@simpleview/cms-foundation'
+  registry: npm
+  url: https://www.npmjs.com/package/@simpleview/cms-foundation
+  language: TypeScript
+  official: false
+  version: null
+  published: null
+  note: Provides helper types and components for working with Granicus CMS Reactor

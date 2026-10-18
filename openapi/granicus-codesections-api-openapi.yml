@@ -1,0 +1,303 @@
+openapi: 3.2.0
+info:
+  title: Granicus Code Sections API
+  version: v1
+  description: 'Operations tagged CodeSections across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: CodeSections
+paths:
+  /v1/{Client}/CodeSections:
+    get:
+      tags:
+      - CodeSections
+      summary: Gets all Code Sections
+      operationId: CodeSections_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusCodeSection'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusCodeSection'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusCodeSection'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusCodeSection'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusCodeSection'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusCodeSection'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusCodeSection'
+    post:
+      tags:
+      - CodeSections
+      summary: Adds one Code Section
+      operationId: CodeSections_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+        description: GranicusCodeSection object to be inserted. Note that CodeSectionId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/CodeSections/{CodeSectionId}:
+    get:
+      tags:
+      - CodeSections
+      summary: Gets one Code Section
+      operationId: CodeSections_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: CodeSectionId
+        in: path
+        description: The Id of the Code Section.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusCodeSection'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusCodeSection'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusCodeSection'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusCodeSection'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusCodeSection'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusCodeSection'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusCodeSection'
+    put:
+      tags:
+      - CodeSections
+      summary: Updates one Code Section
+      operationId: CodeSections_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: CodeSectionId
+        in: path
+        description: The Id of the Code Section.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusCodeSection'
+        description: GranicusCodeSection object to be updated. Note that CodeSectionId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - CodeSections
+      summary: Deletes one Code Section
+      operationId: CodeSections_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: CodeSectionId
+        in: path
+        description: The Id of the Code Section.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusCodeSection:
+      type: object
+      properties:
+        codeSectionId:
+          format: int32
+          type: integer
+        codeSectionGuid:
+          type: string
+        codeSectionLastModifiedUtc:
+          format: date-time
+          type: string
+        codeSectionRowVersion:
+          format: byte
+          type: string
+        codeSectionNumber:
+          type: string
+        codeSectionName:
+          type: string
+        codeSectionActiveFlag:
+          format: int32
+          type: integer
+        codeSectionUsedFlag:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

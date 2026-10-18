@@ -1,0 +1,420 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Attachments API
+  version: v1
+  description: 'Operations tagged MatterAttachments across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterAttachments
+paths:
+  /v1/{Client}/Matters/{MatterId}/Attachments:
+    get:
+      tags:
+      - MatterAttachments
+      summary: Gets all available for Internet viewing Matter Attachments for one Matter record
+      operationId: MatterAttachments_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterAttachment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterAttachment'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterAttachment'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterAttachment'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterAttachment'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterAttachment'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterAttachment'
+    post:
+      tags:
+      - MatterAttachments
+      summary: Adds one Matter Attachment
+      description: 'To upload an attachment file, it can either be provided as MatterAttachmentBinary (base64 encoded) with a MatterAttachmentFileName including
+
+        a file extension or by specifying a MatterAttachmentHyperlink and setting MatterAttachmentIsHyperlink to false. This second method will
+
+        download the URL and save it as a local file.'
+      operationId: MatterAttachments_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+        description: GranicusMatterAttachment object to be inserted. Note that MatterAttachmentId is not required to be set. MatterAttachmentSort is auto-generated and should not be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}:
+    get:
+      tags:
+      - MatterAttachments
+      summary: Gets one available for Internet viewing Matter Attachment
+      operationId: MatterAttachments_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterAttachmentId
+        in: path
+        description: The MatterAttachmentId of the Matter Attachment.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterAttachment'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterAttachment'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterAttachment'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterAttachment'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterAttachment'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterAttachment'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterAttachment'
+    put:
+      tags:
+      - MatterAttachments
+      summary: Updates one Matter Attachment
+      description: 'To upload an attachment file, it can either be provided as MatterAttachmentBinary (base64 encoded) or by specifying a MatterAttachmentHyperlink
+
+        and setting MatterAttachmentIsHyperlink to false. This second method will download the URL and save it as a local file.
+
+        Metadata updates can be done without reuploading the file content - just omit the MatterAttachmentBinary and MatterAttachmentHyperlink fields in the PUT.'
+      operationId: MatterAttachments_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterAttachmentId
+        in: path
+        description: The MatterAttachmentId of the Matter Attachment.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterAttachment'
+        description: GranicusMatterAttachment object to be updated. Note that MatterAttachmentId is not required to be set. MatterAttachmentSort cannot be changed.
+        required: true
+    delete:
+      tags:
+      - MatterAttachments
+      summary: Deletes one Matter Attachment
+      operationId: MatterAttachments_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterAttachmentId
+        in: path
+        description: The MatterAttachmentId of the Matter Attachment.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Attachments/{MatterAttachmentId}/File:
+    get:
+      tags:
+      - MatterAttachments
+      summary: Gets the file content for one Matter Attachment
+      operationId: MatterAttachments_GetFile
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterAttachmentId
+        in: path
+        description: The MatterAttachmentId of the MatterAttachment.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterAttachment:
+      required:
+      - matterAttachmentName
+      type: object
+      properties:
+        matterAttachmentId:
+          format: int32
+          type: integer
+        matterAttachmentGuid:
+          type: string
+        matterAttachmentLastModifiedUtc:
+          format: date-time
+          type: string
+        matterAttachmentRowVersion:
+          format: byte
+          type: string
+        matterAttachmentName:
+          type: string
+        matterAttachmentHyperlink:
+          type: string
+        matterAttachmentFileName:
+          type: string
+        matterAttachmentMatterVersion:
+          type: string
+        matterAttachmentIsHyperlink:
+          type: boolean
+        matterAttachmentBinary:
+          format: byte
+          type: string
+        matterAttachmentIsSupportingDocument:
+          type: boolean
+        matterAttachmentShowOnInternetPage:
+          type: boolean
+        matterAttachmentIsMinuteOrder:
+          type: boolean
+        matterAttachmentIsBoardLetter:
+          type: boolean
+        matterAttachmentAgiloftId:
+          format: int32
+          type: integer
+        matterAttachmentDescription:
+          type: string
+        matterAttachmentPrintWithReports:
+          type: boolean
+        matterAttachmentSort:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

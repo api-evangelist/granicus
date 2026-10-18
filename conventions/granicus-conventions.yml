@@ -1,0 +1,11 @@
+generated: '2026-10-18'
+method: searched
+source: https://developers.govdelivery.com/api/tms/, https://webapi.legistar.com/Help
+idempotency:
+  coverage: none
+  note: No idempotency mechanism documented for Granicus APIs
+
+reversibility:
+  note: No reversal operations documented for Granicus APIs. APIs appear to be primarily CRUD operations for legislative data and messaging.
+
+note: Granicus APIs follow REST conventions with JSON responses. The Legistar Web API uses path parameters for client identification (/{Client}/...). The TMS API uses token authentication via X-AUTH-TOKEN header.

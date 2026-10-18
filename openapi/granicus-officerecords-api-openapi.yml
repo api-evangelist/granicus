@@ -1,0 +1,467 @@
+openapi: 3.2.0
+info:
+  title: Granicus Office Records API
+  version: v1
+  description: 'Operations tagged OfficeRecords across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: OfficeRecords
+paths:
+  /v1/{Client}/OfficeRecords:
+    get:
+      tags:
+      - OfficeRecords
+      summary: Gets all Office Records
+      operationId: OfficeRecords_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+    post:
+      tags:
+      - OfficeRecords
+      summary: Adds one Office Record
+      operationId: OfficeRecords_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+        description: GranicusOfficeRecord object to be inserted. Note that OfficeRecordId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Persons/{PersonId}/OfficeRecords:
+    get:
+      tags:
+      - OfficeRecords
+      summary: Gets Office Records for a Person record
+      operationId: OfficeRecords_GetByNameId
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: PersonId
+        in: path
+        description: The Id of the person record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Bodies/{BodyId}/OfficeRecords:
+    get:
+      tags:
+      - OfficeRecords
+      summary: Gets Office Records for a Body record
+      operationId: OfficeRecords_GetByBodyId
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: BodyId
+        in: path
+        description: The Id of the body record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusOfficeRecord'
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/OfficeRecords/{OfficeRecordId}:
+    get:
+      tags:
+      - OfficeRecords
+      summary: Gets one Office Record
+      operationId: OfficeRecords_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: OfficeRecordId
+        in: path
+        description: The Id of the Office Record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusOfficeRecord'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusOfficeRecord'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusOfficeRecord'
+    put:
+      tags:
+      - OfficeRecords
+      summary: Updates one Office Record
+      operationId: OfficeRecords_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: OfficeRecordId
+        in: path
+        description: The Id of the Office Record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusOfficeRecord'
+        description: GranicusOfficeRecord object to be updated. Note that OfficeRecordId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - OfficeRecords
+      summary: Deletes one Office Record
+      operationId: OfficeRecords_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: OfficeRecordId
+        in: path
+        description: The Id of the Office Record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusOfficeRecord:
+      required:
+      - officeRecordStartDate
+      - officeRecordPersonId
+      - officeRecordBodyId
+      - officeRecordVoteDivider
+      - officeRecordExtendFlag
+      - officeRecordMemberTypeId
+      type: object
+      properties:
+        officeRecordId:
+          format: int32
+          type: integer
+        officeRecordGuid:
+          type: string
+        officeRecordLastModifiedUtc:
+          format: date-time
+          type: string
+        officeRecordRowVersion:
+          format: byte
+          type: string
+        officeRecordFirstName:
+          type: string
+        officeRecordLastName:
+          type: string
+        officeRecordEmail:
+          type: string
+        officeRecordFullName:
+          type: string
+        officeRecordStartDate:
+          format: date-time
+          type: string
+        officeRecordEndDate:
+          format: date-time
+          type: string
+        officeRecordSort:
+          format: int32
+          type: integer
+        officeRecordPersonId:
+          format: int32
+          type: integer
+        officeRecordBodyId:
+          format: int32
+          type: integer
+        officeRecordBodyName:
+          type: string
+        officeRecordTitle:
+          type: string
+        officeRecordVoteDivider:
+          format: double
+          type: number
+        officeRecordExtendFlag:
+          format: int32
+          type: integer
+        officeRecordMemberTypeId:
+          format: int32
+          type: integer
+        officeRecordMemberType:
+          type: string
+        officeRecordSupportNameId:
+          format: int32
+          type: integer
+        officeRecordSupportFullName:
+          type: string
+        officeRecordExtraText:
+          type: string
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

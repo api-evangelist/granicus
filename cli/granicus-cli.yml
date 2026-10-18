@@ -1,0 +1,5 @@
+generated: '2026-10-18'
+method: none
+install: none
+commands: []
+note: No first-party CLI tools found for Granicus APIs. SDKs are available in various languages (Ruby, .NET, Java, Clojure, Go) but no dedicated CLI.

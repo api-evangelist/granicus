@@ -1,0 +1,7 @@
+generated: '2026-10-18'
+method: searched
+source: https://status.granicus.com
+versioning: none
+deprecation: none
+status_page: https://status.granicus.com
+note: Granicus maintains a public status page for system status and incident reporting. No published versioning or deprecation policies found in documentation.

@@ -1,0 +1,423 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Histories API
+  version: v1
+  description: 'Operations tagged MatterHistories across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterHistories
+paths:
+  /v1/{Client}/Matters/{MatterId}/Histories:
+    get:
+      tags:
+      - MatterHistories
+      summary: Gets all Matter History records under a particular Matter
+      operationId: MatterHistories_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: AgendaNote
+        in: query
+        description: An optional parameter that specifies whether the agenda note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: MinutesNote
+        in: query
+        description: An optional parameter that specifies whether the minutes note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterHistory'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterHistory'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterHistory'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterHistory'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterHistory'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterHistory'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterHistory'
+    post:
+      tags:
+      - MatterHistories
+      summary: Adds one Matter History record
+      operationId: MatterHistories_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+        description: GranicusMatterHistory object to be inserted. Note that MatterHistoryId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/Histories/{MatterHistoryId}:
+    get:
+      tags:
+      - MatterHistories
+      summary: Gets one Matter History record
+      operationId: MatterHistories_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterHistoryId
+        in: path
+        description: The Id of the Matter History.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: AgendaNote
+        in: query
+        description: An optional parameter that specifies whethere the agenda note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: MinutesNote
+        in: query
+        description: An optional parameter that specifies whethere the minutes note should be included. Set to 1 to include. 0 by default.
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterHistory'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterHistory'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterHistory'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterHistory'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterHistory'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterHistory'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterHistory'
+    put:
+      tags:
+      - MatterHistories
+      summary: Updates one Matter History record
+      operationId: MatterHistories_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The Id of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterHistoryId
+        in: path
+        description: The Id of the Matter History record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterHistory'
+        description: GranicusMatterHistory object to be updated. Note that MatterHistoryID is not required to be set.
+        required: true
+    delete:
+      tags:
+      - MatterHistories
+      summary: Deletes one Matter History record
+      operationId: MatterHistories_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterHistoryId
+        in: path
+        description: The Id of the Matter History record.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterHistory:
+      type: object
+      properties:
+        matterHistoryId:
+          format: int32
+          type: integer
+        matterHistoryGuid:
+          type: string
+        matterHistoryLastModifiedUtc:
+          format: date-time
+          type: string
+        matterHistoryRowVersion:
+          format: byte
+          type: string
+        matterHistoryEventId:
+          format: int32
+          type: integer
+        matterHistoryAgendaSequence:
+          format: int32
+          type: integer
+        matterHistoryMinutesSequence:
+          format: int32
+          type: integer
+        matterHistoryAgendaNumber:
+          type: string
+        matterHistoryVideo:
+          format: int32
+          type: integer
+        matterHistoryVideoIndex:
+          format: int32
+          type: integer
+        matterHistoryVersion:
+          type: string
+        matterHistoryAgendaNote:
+          type: string
+        matterHistoryMinutesNote:
+          type: string
+        matterHistoryActionDate:
+          format: date-time
+          type: string
+        matterHistoryActionId:
+          format: int32
+          type: integer
+        matterHistoryActionName:
+          type: string
+        matterHistoryActionText:
+          type: string
+        matterHistoryActionBodyId:
+          format: int32
+          type: integer
+        matterHistoryActionBodyName:
+          type: string
+        matterHistoryPassedFlag:
+          format: int32
+          type: integer
+        matterHistoryPassedFlagName:
+          type: string
+        matterHistoryRollCallFlag:
+          format: int32
+          type: integer
+        matterHistoryFlagExtra:
+          format: int32
+          type: integer
+        matterHistoryTally:
+          type: string
+        matterHistoryAccelaRecordId:
+          type: string
+        matterHistoryConsent:
+          format: int32
+          type: integer
+        matterHistoryMoverId:
+          format: int32
+          type: integer
+        matterHistoryMoverName:
+          type: string
+        matterHistorySeconderId:
+          format: int32
+          type: integer
+        matterHistorySeconderName:
+          type: string
+        matterHistoryMatterStatusId:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

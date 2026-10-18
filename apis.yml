@@ -1,23 +1,828 @@
 aid: granicus
+
 name: Granicus
-description: 'Granicus is a company surfaced via the API Evangelist harvest backlog (source: capability-gaps)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Granicus (Granicus, Inc.) describes itself as the Citizen Experience Platform for government: cloud software that, per its website,
+  connects 330M people and 7,000+ government organizations. Its products, including the govDelivery digital communications platform, help public-sector
+  agencies run websites, citizen engagement and notifications, meetings and agenda management, records and service delivery. Its public GitHub
+  organization is github.com/granicus.'
+
 url: https://raw.githubusercontent.com/api-evangelist/granicus/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:capability-gaps
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-18 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-18'
+
 modified: '2026-10-18'
+
 tags:
 - Company
-apis: []
+- Government
+- GovTech
+- Public Sector
+- Citizen Engagement
+- Digital Communications
+- Software-as-a-Service
+tags_raw:
+- Company
+- Government
+- GovTech
+- Public Sector
+- Citizen Engagement
+- Digital Communications
+- SaaS
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://granicus.com/wp-content/uploads/Yoast-Logo.png
+
 common:
+- type: AgenticAccess
+  url: agentic-access/granicus-agentic-access.yml
+- type: Spectral
+  url: rules/granicus-rules.yml
+- type: JSONLD
+  url: json-ld/granicus-context.jsonld
+- type: Vocabulary
+  url: vocabulary/granicus-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/granicus-data-model.yml
+- type: Compliance
+  url: https://granicus.com/trust-center/security/
+- type: Authentication
+  url: authentication/granicus-authentication.yml
+- type: Lifecycle
+  url: lifecycle/granicus-lifecycle.yml
+- type: Conformance
+  url: conformance/granicus-conformance.yml
+- type: Overlay
+  url: overlays/granicus-legistar-overlay.yaml
+- type: LLMsTxt
+  url: llms/granicus-llms.txt
+- type: SecurityTxt
+  url: well-known/granicus-status-security.txt
+- type: WellKnown
+  url: well-known/granicus-well-known.yml
+- type: Hosts
+  url: hosts/granicus-hosts.yml
+- type: Vendors
+  url: vendors/granicus-vendors.yml
+- type: SDKs
+  url: packages/granicus-packages.yml
+- type: Packages
+  url: packages/granicus-packages.yml
+- type: Security
+  url: https://granicus.com/uk/security/
+- type: Newsroom
+  url: https://granicus.com/news/24206/
+- type: Leadership
+  url: https://granicus.com/team/jeff-ford/
+- type: Documentation
+  url: https://granicus.com/resources/guides/
+- type: GettingStarted
+  url: https://support.granicus.com/s/article/Getting-Started-with-Granicus-Learning
+- type: TrustCenter
+  url: security/granicus-trust-center.yml
+- type: DomainSecurity
+  url: security/granicus-domain-security.yml
 - type: Website
   url: https://granicus.com
+- type: Support
+  url: https://support.granicus.com/
+- type: HelpCenter
+  url: https://granicus.com/customer-support/
+- type: Blog
+  url: https://granicus.com/resources/blog/
+- type: Login
+  url: https://granicus.com/login/
+- type: ChangeLog
+  url: https://support.granicus.com/s/article/Release-Notes
+- type: StatusPage
+  url: https://status.granicus.com/
+- type: TermsOfService
+  url: https://granicus.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://granicus.com/privacy-policy/
+- type: Contact
+  url: https://granicus.com/contact-us/
+- type: GitHubOrganization
+  url: https://github.com/granicus
+- type: LinkedIn
+  url: https://www.linkedin.com/company/granicusinc/
+- type: Twitter
+  url: https://twitter.com/Granicus
+- type: YouTube
+  url: https://www.youtube.com/c/Granicus
+
+apis:
+- aid: granicus:govdelivery-tms-api
+  name: GovDelivery Transactional Messaging Service (TMS) API
+  description: >-
+    REST API for sending transactional email, SMS and voice messages, managing message templates, keywords,
+    inbound messages and webhooks, published by Granicus as a RAML 0.8 contract (baseUri https://tms.govdelivery.com,
+    token authentication).
+  humanURL: https://developers.govdelivery.com/api/tms/
+  baseURL: https://tms.govdelivery.com
+  tags:
+  - Messaging
+  - Email
+  - SMS
+  properties:
+  - type: RAML
+    url: openapi/_original/granicus-govdelivery-tms.raml
+  - type: RAML (provider-hosted)
+    url: https://developers.govdelivery.com/api/tms/tms.raml
+  - type: Documentation
+    url: https://developers.govdelivery.com/api/tms/
+- aid: granicus:govdelivery-communications-cloud-api
+  name: GovDelivery Communications Cloud API
+  description: >-
+    API for the govDelivery Communications Cloud, documented by Granicus on its GovDelivery API documentation
+    site ("Resources and Guides for Communications Cloud, TMS, Interactive Text and Reports PRO API");
+    no machine-readable contract is published and the readable docs landing page does not state a base
+    URL.
+  humanURL: https://developers.govdelivery.com/api/comm_cloud_v1/Default.htm
+  tags:
+  - Digital Communications
+  properties:
+  - type: Documentation
+    url: https://developers.govdelivery.com/api/comm_cloud_v1/Default.htm
+  - type: Portal
+    url: https://developers.govdelivery.com/
+- aid: granicus:platform-soap-api
+  name: Granicus Platform SOAP API
+  description: >-
+    SOAP web services for the Granicus MediaManager meeting-media platform (User SDK with 98 operations,
+    MediaVault SDK, and the MeetingServer encoder service), published as WSDLs in Granicus' own GitHub
+    repositories granicus/platform-api-java and granicus/platform-api-net; the WSDL soap:address entries
+    point at granicus.com hosts (e.g. .../sdk/user/index.php), with no single public production endpoint
+    stated.
+  humanURL: https://github.com/granicus/platform-api-java
+  tags:
+  - SOAP
+  - Meetings
+  - Media
+  properties:
+  - type: WSDL
+    url: wsdl/granicus-platform-user-sdk.wsdl
+  - type: WSDL
+    url: wsdl/granicus-mediavault-sdk.wsdl
+  - type: WSDL
+    url: wsdl/granicus-encoder.wsdl
+  - type: GitHubRepository
+    url: https://github.com/granicus/platform-api-java
+  - type: GitHubRepository
+    url: https://github.com/granicus/platform-api-net
+- aid: granicus:granicus-actions-api
+  name: Granicus Actions API
+  description: The Actions API from Granicus — 3 operation(s) for actions.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-actions-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-bodies-api
+  name: Granicus Bodies API
+  description: The Bodies API from Granicus — 2 operation(s) for bodies.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - Bodies
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-bodies-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-bodytypes-api
+  name: Granicus Body Types API
+  description: The BodyTypes API from Granicus — 3 operation(s) for bodytypes.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - BodyTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-bodytypes-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-codesections-api
+  name: Granicus Code Sections API
+  description: The CodeSections API from Granicus — 2 operation(s) for codesections.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - CodeSections
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-codesections-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-eventitems-api
+  name: Granicus Event Items API
+  description: The EventItems API from Granicus — 2 operation(s) for eventitems.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - EventItems
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-eventitems-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-events-api
+  name: Granicus Events API
+  description: The Events API from Granicus — 3 operation(s) for events.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-events-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-indexes-api
+  name: Granicus Indexes API
+  description: The Indexes API from Granicus — 2 operation(s) for indexes.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - Indexes
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-indexes-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-matterattachments-api
+  name: Granicus Matter Attachments API
+  description: The MatterAttachments API from Granicus — 3 operation(s) for matterattachments.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterAttachments
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-matterattachments-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-mattercodesections-api
+  name: Granicus Matter Code Sections API
+  description: The MatterCodeSections API from Granicus — 2 operation(s) for mattercodesections.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterCodeSections
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-mattercodesections-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-matterhistories-api
+  name: Granicus Matter Histories API
+  description: The MatterHistories API from Granicus — 2 operation(s) for matterhistories.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterHistories
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-matterhistories-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-matterindexes-api
+  name: Granicus Matter Indexes API
+  description: The MatterIndexes API from Granicus — 7 operation(s) for matterindexes.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterIndexes
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-matterindexes-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-matterrelations-api
+  name: Granicus Matter Relations API
+  description: The MatterRelations API from Granicus — 2 operation(s) for matterrelations.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterRelations
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-matterrelations-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-matterrequesters-api
+  name: Granicus Matter Requesters API
+  description: The MatterRequesters API from Granicus — 1 operation(s) for matterrequesters.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterRequesters
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-matterrequesters-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-matters-api
+  name: Granicus Matters API
+  description: The Matters API from Granicus — 2 operation(s) for matters.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - Matters
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-matters-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-mattersponsors-api
+  name: Granicus Matter Sponsors API
+  description: The MatterSponsors API from Granicus — 2 operation(s) for mattersponsors.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterSponsors
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-mattersponsors-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-matterstatuses-api
+  name: Granicus Matter Statuses API
+  description: The MatterStatuses API from Granicus — 2 operation(s) for matterstatuses.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterStatuses
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-matterstatuses-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-mattertexts-api
+  name: Granicus Matter Texts API
+  description: The MatterTexts API from Granicus — 3 operation(s) for mattertexts.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterTexts
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-mattertexts-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-mattertypes-api
+  name: Granicus Matter Types API
+  description: The MatterTypes API from Granicus — 2 operation(s) for mattertypes.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - MatterTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-mattertypes-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-officerecords-api
+  name: Granicus Office Records API
+  description: The OfficeRecords API from Granicus — 4 operation(s) for officerecords.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - OfficeRecords
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-officerecords-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-persons-api
+  name: Granicus Persons API
+  description: The Persons API from Granicus — 2 operation(s) for persons.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - Persons
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-persons-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-rollcalls-api
+  name: Granicus Roll Calls API
+  description: The RollCalls API from Granicus — 3 operation(s) for rollcalls.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - RollCalls
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-rollcalls-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-votes-api
+  name: Granicus Votes API
+  description: The Votes API from Granicus — 3 operation(s) for votes.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - Votes
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-votes-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+- aid: granicus:granicus-votetypes-api
+  name: Granicus Vote Types API
+  description: The VoteTypes API from Granicus — 2 operation(s) for votetypes.
+  humanURL: https://webapi.legistar.com/Help
+  baseURL: https://webapi.legistar.com
+  tags:
+  - VoteTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/granicus-votetypes-api-openapi.yml
+  - type: OpenAPI (provider-hosted)
+    url: https://webapi.legistar.com/swagger/docs/v1
+  - type: Documentation
+    url: https://webapi.legistar.com/Help
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-item-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-matter-history-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-office-record-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-event-schema.json
+  - type: JSONSchema
+    url: json-schema/granicus-granicus-person-schema.json
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website https://granicus.com returned 200 with title "Granicus | The Citizen Experience Platform for Government"; GitHub org granicus
+    names "Granicus, Inc." with blog www.granicus.com. No public developer portal or API reference found on the site or by search.
+  evidence:
+  - url: https://granicus.com
+    status: 200
+  - url: https://api.github.com/orgs/granicus
+    status: 200
+  - url: https://support.granicus.com/
+    status: 200
+  - url: https://granicus.com/customer-support/
+    status: 200
+  - url: https://granicus.com/resources/blog/
+    status: 200
+  - url: https://granicus.com/login/
+    status: 200
+  - url: https://support.granicus.com/s/article/Release-Notes
+    status: 200
+  - url: https://status.granicus.com/
+    status: 200
+  - url: https://granicus.com/terms-of-use/
+    status: 200
+  - url: https://granicus.com/privacy-policy/
+    status: 200
+  - url: https://granicus.com/contact-us/
+    status: 200
+  - url: https://github.com/granicus
+    status: 200
+  - url: https://www.linkedin.com/company/granicusinc/
+    status: 200
+  - url: https://twitter.com/Granicus
+    status: 200
+  - url: https://www.youtube.com/c/Granicus
+    status: 200
+x-enrichment:
+  date: '2026-10-18'
+  status: enriched
+  artifacts_added: 52
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=deepseek,regulatory=anthropic

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/granicus/main/json-schema/granicus-granicus-person-schema.json",
+  "title": "GranicusPerson",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusPerson",
+  "required": [
+    "personLastName",
+    "personFullName"
+  ],
+  "type": "object",
+  "properties": {
+    "personId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "personGuid": {
+      "type": "string"
+    },
+    "personLastModifiedUtc": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "personRowVersion": {
+      "format": "byte",
+      "type": "string"
+    },
+    "personFirstName": {
+      "type": "string"
+    },
+    "personLastName": {
+      "type": "string"
+    },
+    "personFullName": {
+      "type": "string"
+    },
+    "personActiveFlag": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "personCanViewFlag": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "personUsedSponsorFlag": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "personAddress1": {
+      "type": "string"
+    },
+    "personCity1": {
+      "type": "string"
+    },
+    "personState1": {
+      "type": "string"
+    },
+    "personZip1": {
+      "type": "string"
+    },
+    "personPhone": {
+      "type": "string"
+    },
+    "personFax": {
+      "type": "string"
+    },
+    "personEmail": {
+      "type": "string"
+    },
+    "personWWW": {
+      "type": "string"
+    },
+    "personAddress2": {
+      "type": "string"
+    },
+    "personCity2": {
+      "type": "string"
+    },
+    "personState2": {
+      "type": "string"
+    },
+    "personZip2": {
+      "type": "string"
+    },
+    "personPhone2": {
+      "type": "string"
+    },
+    "personFax2": {
+      "type": "string"
+    },
+    "personEmail2": {
+      "type": "string"
+    },
+    "personWWW2": {
+      "type": "string"
+    }
+  }
+}

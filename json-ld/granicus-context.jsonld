@@ -1,0 +1,1429 @@
+{
+  "@context": {
+    "@vocab": "https://granicus.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "granicus": "https://granicus.com/schema#",
+    "GranicusAction": "granicus:GranicusAction",
+    "actionId": {
+      "@id": "granicus:actionId",
+      "@type": "xsd:integer"
+    },
+    "actionGuid": {
+      "@id": "granicus:actionGuid",
+      "@type": "xsd:string"
+    },
+    "actionLastModifiedUtc": {
+      "@id": "granicus:actionLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "actionRowVersion": {
+      "@id": "granicus:actionRowVersion",
+      "@type": "xsd:string"
+    },
+    "actionName": {
+      "@id": "granicus:actionName",
+      "@type": "xsd:string"
+    },
+    "actionActiveFlag": {
+      "@id": "granicus:actionActiveFlag",
+      "@type": "xsd:integer"
+    },
+    "actionUsedFlag": {
+      "@id": "granicus:actionUsedFlag",
+      "@type": "xsd:integer"
+    },
+    "GranicusBody": "granicus:GranicusBody",
+    "bodyId": {
+      "@id": "granicus:bodyId",
+      "@type": "xsd:integer"
+    },
+    "bodyGuid": {
+      "@id": "granicus:bodyGuid",
+      "@type": "xsd:string"
+    },
+    "bodyLastModifiedUtc": {
+      "@id": "granicus:bodyLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "bodyRowVersion": {
+      "@id": "granicus:bodyRowVersion",
+      "@type": "xsd:string"
+    },
+    "bodyName": {
+      "@id": "granicus:bodyName",
+      "@type": "xsd:string"
+    },
+    "bodyTypeId": {
+      "@id": "granicus:bodyTypeId",
+      "@type": "xsd:integer"
+    },
+    "bodyTypeName": {
+      "@id": "granicus:bodyTypeName",
+      "@type": "xsd:string"
+    },
+    "bodyMeetFlag": {
+      "@id": "granicus:bodyMeetFlag",
+      "@type": "xsd:integer"
+    },
+    "bodyActiveFlag": {
+      "@id": "granicus:bodyActiveFlag",
+      "@type": "xsd:integer"
+    },
+    "bodySort": {
+      "@id": "granicus:bodySort",
+      "@type": "xsd:integer"
+    },
+    "bodyDescription": {
+      "@id": "granicus:bodyDescription",
+      "@type": "xsd:string"
+    },
+    "bodyContactNameId": {
+      "@id": "granicus:bodyContactNameId",
+      "@type": "xsd:integer"
+    },
+    "bodyContactFullName": {
+      "@id": "granicus:bodyContactFullName",
+      "@type": "xsd:string"
+    },
+    "bodyContactPhone": {
+      "@id": "granicus:bodyContactPhone",
+      "@type": "xsd:string"
+    },
+    "bodyContactEmail": {
+      "@id": "granicus:bodyContactEmail",
+      "@type": "xsd:string"
+    },
+    "bodyUsedControlFlag": {
+      "@id": "granicus:bodyUsedControlFlag",
+      "@type": "xsd:integer"
+    },
+    "bodyNumberOfMembers": {
+      "@id": "granicus:bodyNumberOfMembers",
+      "@type": "xsd:integer"
+    },
+    "bodyUsedActingFlag": {
+      "@id": "granicus:bodyUsedActingFlag",
+      "@type": "xsd:integer"
+    },
+    "bodyUsedTargetFlag": {
+      "@id": "granicus:bodyUsedTargetFlag",
+      "@type": "xsd:integer"
+    },
+    "bodyUsedSponsorFlag": {
+      "@id": "granicus:bodyUsedSponsorFlag",
+      "@type": "xsd:integer"
+    },
+    "GranicusBodyType": "granicus:GranicusBodyType",
+    "bodyTypeGuid": {
+      "@id": "granicus:bodyTypeGuid",
+      "@type": "xsd:string"
+    },
+    "bodyTypeLastModifiedUtc": {
+      "@id": "granicus:bodyTypeLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "bodyTypeRowVersion": {
+      "@id": "granicus:bodyTypeRowVersion",
+      "@type": "xsd:string"
+    },
+    "GranicusCodeSection": "granicus:GranicusCodeSection",
+    "codeSectionId": {
+      "@id": "granicus:codeSectionId",
+      "@type": "xsd:integer"
+    },
+    "codeSectionGuid": {
+      "@id": "granicus:codeSectionGuid",
+      "@type": "xsd:string"
+    },
+    "codeSectionLastModifiedUtc": {
+      "@id": "granicus:codeSectionLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "codeSectionRowVersion": {
+      "@id": "granicus:codeSectionRowVersion",
+      "@type": "xsd:string"
+    },
+    "codeSectionNumber": {
+      "@id": "granicus:codeSectionNumber",
+      "@type": "xsd:string"
+    },
+    "codeSectionName": {
+      "@id": "granicus:codeSectionName",
+      "@type": "xsd:string"
+    },
+    "codeSectionActiveFlag": {
+      "@id": "granicus:codeSectionActiveFlag",
+      "@type": "xsd:integer"
+    },
+    "codeSectionUsedFlag": {
+      "@id": "granicus:codeSectionUsedFlag",
+      "@type": "xsd:integer"
+    },
+    "GranicusEventItem": "granicus:GranicusEventItem",
+    "eventItemId": {
+      "@id": "granicus:eventItemId",
+      "@type": "xsd:integer"
+    },
+    "eventItemGuid": {
+      "@id": "granicus:eventItemGuid",
+      "@type": "xsd:string"
+    },
+    "eventItemLastModifiedUtc": {
+      "@id": "granicus:eventItemLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "eventItemRowVersion": {
+      "@id": "granicus:eventItemRowVersion",
+      "@type": "xsd:string"
+    },
+    "eventItemEventId": {
+      "@id": "granicus:eventItemEventId",
+      "@type": "xsd:integer"
+    },
+    "eventItemAgendaSequence": {
+      "@id": "granicus:eventItemAgendaSequence",
+      "@type": "xsd:integer"
+    },
+    "eventItemMinutesSequence": {
+      "@id": "granicus:eventItemMinutesSequence",
+      "@type": "xsd:integer"
+    },
+    "eventItemAgendaNumber": {
+      "@id": "granicus:eventItemAgendaNumber",
+      "@type": "xsd:string"
+    },
+    "eventItemVideo": {
+      "@id": "granicus:eventItemVideo",
+      "@type": "xsd:integer"
+    },
+    "eventItemVideoIndex": {
+      "@id": "granicus:eventItemVideoIndex",
+      "@type": "xsd:integer"
+    },
+    "eventItemVersion": {
+      "@id": "granicus:eventItemVersion",
+      "@type": "xsd:string"
+    },
+    "eventItemAgendaNote": {
+      "@id": "granicus:eventItemAgendaNote",
+      "@type": "xsd:string"
+    },
+    "eventItemMinutesNote": {
+      "@id": "granicus:eventItemMinutesNote",
+      "@type": "xsd:string"
+    },
+    "eventItemActionId": {
+      "@id": "granicus:eventItemActionId",
+      "@type": "xsd:integer"
+    },
+    "eventItemActionName": {
+      "@id": "granicus:eventItemActionName",
+      "@type": "xsd:string"
+    },
+    "eventItemActionText": {
+      "@id": "granicus:eventItemActionText",
+      "@type": "xsd:string"
+    },
+    "eventItemPassedFlag": {
+      "@id": "granicus:eventItemPassedFlag",
+      "@type": "xsd:integer"
+    },
+    "eventItemPassedFlagName": {
+      "@id": "granicus:eventItemPassedFlagName",
+      "@type": "xsd:string"
+    },
+    "eventItemRollCallFlag": {
+      "@id": "granicus:eventItemRollCallFlag",
+      "@type": "xsd:integer"
+    },
+    "eventItemFlagExtra": {
+      "@id": "granicus:eventItemFlagExtra",
+      "@type": "xsd:integer"
+    },
+    "eventItemTitle": {
+      "@id": "granicus:eventItemTitle",
+      "@type": "xsd:string"
+    },
+    "eventItemTally": {
+      "@id": "granicus:eventItemTally",
+      "@type": "xsd:string"
+    },
+    "eventItemAccelaRecordId": {
+      "@id": "granicus:eventItemAccelaRecordId",
+      "@type": "xsd:string"
+    },
+    "eventItemConsent": {
+      "@id": "granicus:eventItemConsent",
+      "@type": "xsd:integer"
+    },
+    "eventItemMoverId": {
+      "@id": "granicus:eventItemMoverId",
+      "@type": "xsd:integer"
+    },
+    "eventItemMover": {
+      "@id": "granicus:eventItemMover",
+      "@type": "xsd:string"
+    },
+    "eventItemSeconderId": {
+      "@id": "granicus:eventItemSeconderId",
+      "@type": "xsd:integer"
+    },
+    "eventItemSeconder": {
+      "@id": "granicus:eventItemSeconder",
+      "@type": "xsd:string"
+    },
+    "eventItemMatterId": {
+      "@id": "granicus:eventItemMatterId",
+      "@type": "xsd:integer"
+    },
+    "eventItemMatterGuid": {
+      "@id": "granicus:eventItemMatterGuid",
+      "@type": "xsd:string"
+    },
+    "eventItemMatterFile": {
+      "@id": "granicus:eventItemMatterFile",
+      "@type": "xsd:string"
+    },
+    "eventItemMatterName": {
+      "@id": "granicus:eventItemMatterName",
+      "@type": "xsd:string"
+    },
+    "eventItemMatterType": {
+      "@id": "granicus:eventItemMatterType",
+      "@type": "xsd:string"
+    },
+    "eventItemMatterStatus": {
+      "@id": "granicus:eventItemMatterStatus",
+      "@type": "xsd:string"
+    },
+    "eventItemMatterAttachments": {
+      "@id": "granicus:eventItemMatterAttachments",
+      "@container": "@list"
+    },
+    "GranicusMatterAttachment": "granicus:GranicusMatterAttachment",
+    "matterAttachmentId": {
+      "@id": "granicus:matterAttachmentId",
+      "@type": "xsd:integer"
+    },
+    "matterAttachmentGuid": {
+      "@id": "granicus:matterAttachmentGuid",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentLastModifiedUtc": {
+      "@id": "granicus:matterAttachmentLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterAttachmentRowVersion": {
+      "@id": "granicus:matterAttachmentRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentName": {
+      "@id": "granicus:matterAttachmentName",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentHyperlink": {
+      "@id": "granicus:matterAttachmentHyperlink",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentFileName": {
+      "@id": "granicus:matterAttachmentFileName",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentMatterVersion": {
+      "@id": "granicus:matterAttachmentMatterVersion",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentIsHyperlink": {
+      "@id": "granicus:matterAttachmentIsHyperlink",
+      "@type": "xsd:boolean"
+    },
+    "matterAttachmentBinary": {
+      "@id": "granicus:matterAttachmentBinary",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentIsSupportingDocument": {
+      "@id": "granicus:matterAttachmentIsSupportingDocument",
+      "@type": "xsd:boolean"
+    },
+    "matterAttachmentShowOnInternetPage": {
+      "@id": "granicus:matterAttachmentShowOnInternetPage",
+      "@type": "xsd:boolean"
+    },
+    "matterAttachmentIsMinuteOrder": {
+      "@id": "granicus:matterAttachmentIsMinuteOrder",
+      "@type": "xsd:boolean"
+    },
+    "matterAttachmentIsBoardLetter": {
+      "@id": "granicus:matterAttachmentIsBoardLetter",
+      "@type": "xsd:boolean"
+    },
+    "matterAttachmentAgiloftId": {
+      "@id": "granicus:matterAttachmentAgiloftId",
+      "@type": "xsd:integer"
+    },
+    "matterAttachmentDescription": {
+      "@id": "granicus:matterAttachmentDescription",
+      "@type": "xsd:string"
+    },
+    "matterAttachmentPrintWithReports": {
+      "@id": "granicus:matterAttachmentPrintWithReports",
+      "@type": "xsd:boolean"
+    },
+    "matterAttachmentSort": {
+      "@id": "granicus:matterAttachmentSort",
+      "@type": "xsd:integer"
+    },
+    "GranicusEvent": "granicus:GranicusEvent",
+    "eventId": {
+      "@id": "granicus:eventId",
+      "@type": "xsd:integer"
+    },
+    "eventGuid": {
+      "@id": "granicus:eventGuid",
+      "@type": "xsd:string"
+    },
+    "eventLastModifiedUtc": {
+      "@id": "granicus:eventLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "eventRowVersion": {
+      "@id": "granicus:eventRowVersion",
+      "@type": "xsd:string"
+    },
+    "eventBodyId": {
+      "@id": "granicus:eventBodyId",
+      "@type": "xsd:integer"
+    },
+    "eventBodyName": {
+      "@id": "granicus:eventBodyName",
+      "@type": "xsd:string"
+    },
+    "eventDate": {
+      "@id": "granicus:eventDate",
+      "@type": "xsd:dateTime"
+    },
+    "eventTime": {
+      "@id": "granicus:eventTime",
+      "@type": "xsd:string"
+    },
+    "eventVideoStatus": {
+      "@id": "granicus:eventVideoStatus",
+      "@type": "xsd:string"
+    },
+    "eventAgendaStatusId": {
+      "@id": "granicus:eventAgendaStatusId",
+      "@type": "xsd:integer"
+    },
+    "eventAgendaStatusName": {
+      "@id": "granicus:eventAgendaStatusName",
+      "@type": "xsd:string"
+    },
+    "eventMinutesStatusId": {
+      "@id": "granicus:eventMinutesStatusId",
+      "@type": "xsd:integer"
+    },
+    "eventMinutesStatusName": {
+      "@id": "granicus:eventMinutesStatusName",
+      "@type": "xsd:string"
+    },
+    "eventLocation": {
+      "@id": "granicus:eventLocation",
+      "@type": "xsd:string"
+    },
+    "eventAgendaFile": {
+      "@id": "granicus:eventAgendaFile",
+      "@type": "xsd:string"
+    },
+    "eventMinutesFile": {
+      "@id": "granicus:eventMinutesFile",
+      "@type": "xsd:string"
+    },
+    "eventAgendaLastPublishedUTC": {
+      "@id": "granicus:eventAgendaLastPublishedUTC",
+      "@type": "xsd:dateTime"
+    },
+    "eventMinutesLastPublishedUTC": {
+      "@id": "granicus:eventMinutesLastPublishedUTC",
+      "@type": "xsd:dateTime"
+    },
+    "eventComment": {
+      "@id": "granicus:eventComment",
+      "@type": "xsd:string"
+    },
+    "eventVideoPath": {
+      "@id": "granicus:eventVideoPath",
+      "@type": "xsd:string"
+    },
+    "eventMedia": {
+      "@id": "granicus:eventMedia",
+      "@type": "xsd:string"
+    },
+    "eventInSiteURL": {
+      "@id": "granicus:eventInSiteURL",
+      "@type": "xsd:string"
+    },
+    "eventItems": {
+      "@id": "granicus:eventItems",
+      "@container": "@list"
+    },
+    "GranicusIndex": "granicus:GranicusIndex",
+    "indexId": {
+      "@id": "granicus:indexId",
+      "@type": "xsd:integer"
+    },
+    "indexGuid": {
+      "@id": "granicus:indexGuid",
+      "@type": "xsd:string"
+    },
+    "indexLastModifiedUtc": {
+      "@id": "granicus:indexLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "indexRowVersion": {
+      "@id": "granicus:indexRowVersion",
+      "@type": "xsd:string"
+    },
+    "indexName": {
+      "@id": "granicus:indexName",
+      "@type": "xsd:string"
+    },
+    "indexActiveFlag": {
+      "@id": "granicus:indexActiveFlag",
+      "@type": "xsd:integer"
+    },
+    "indexUsedFlag": {
+      "@id": "granicus:indexUsedFlag",
+      "@type": "xsd:integer"
+    },
+    "api_metadata": {
+      "@id": "granicus:api_metadata",
+      "@type": "xsd:string"
+    },
+    "GranicusMatterCodeSection": "granicus:GranicusMatterCodeSection",
+    "matterCodeSectionId": {
+      "@id": "granicus:matterCodeSectionId",
+      "@type": "xsd:integer"
+    },
+    "matterCodeSectionGuid": {
+      "@id": "granicus:matterCodeSectionGuid",
+      "@type": "xsd:string"
+    },
+    "matterCodeSectionLastModifiedUtc": {
+      "@id": "granicus:matterCodeSectionLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterCodeSectionRowVersion": {
+      "@id": "granicus:matterCodeSectionRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterCodeSectionMatterId": {
+      "@id": "granicus:matterCodeSectionMatterId",
+      "@type": "xsd:integer"
+    },
+    "matterCodeSectionCodeSectionId": {
+      "@id": "granicus:matterCodeSectionCodeSectionId",
+      "@type": "xsd:integer"
+    },
+    "matterCodeSectionNumber": {
+      "@id": "granicus:matterCodeSectionNumber",
+      "@type": "xsd:string"
+    },
+    "matterCodeSectionName": {
+      "@id": "granicus:matterCodeSectionName",
+      "@type": "xsd:string"
+    },
+    "GranicusMatterHistory": "granicus:GranicusMatterHistory",
+    "matterHistoryId": {
+      "@id": "granicus:matterHistoryId",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryGuid": {
+      "@id": "granicus:matterHistoryGuid",
+      "@type": "xsd:string"
+    },
+    "matterHistoryLastModifiedUtc": {
+      "@id": "granicus:matterHistoryLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterHistoryRowVersion": {
+      "@id": "granicus:matterHistoryRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterHistoryEventId": {
+      "@id": "granicus:matterHistoryEventId",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryAgendaSequence": {
+      "@id": "granicus:matterHistoryAgendaSequence",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryMinutesSequence": {
+      "@id": "granicus:matterHistoryMinutesSequence",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryAgendaNumber": {
+      "@id": "granicus:matterHistoryAgendaNumber",
+      "@type": "xsd:string"
+    },
+    "matterHistoryVideo": {
+      "@id": "granicus:matterHistoryVideo",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryVideoIndex": {
+      "@id": "granicus:matterHistoryVideoIndex",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryVersion": {
+      "@id": "granicus:matterHistoryVersion",
+      "@type": "xsd:string"
+    },
+    "matterHistoryAgendaNote": {
+      "@id": "granicus:matterHistoryAgendaNote",
+      "@type": "xsd:string"
+    },
+    "matterHistoryMinutesNote": {
+      "@id": "granicus:matterHistoryMinutesNote",
+      "@type": "xsd:string"
+    },
+    "matterHistoryActionDate": {
+      "@id": "granicus:matterHistoryActionDate",
+      "@type": "xsd:dateTime"
+    },
+    "matterHistoryActionId": {
+      "@id": "granicus:matterHistoryActionId",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryActionName": {
+      "@id": "granicus:matterHistoryActionName",
+      "@type": "xsd:string"
+    },
+    "matterHistoryActionText": {
+      "@id": "granicus:matterHistoryActionText",
+      "@type": "xsd:string"
+    },
+    "matterHistoryActionBodyId": {
+      "@id": "granicus:matterHistoryActionBodyId",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryActionBodyName": {
+      "@id": "granicus:matterHistoryActionBodyName",
+      "@type": "xsd:string"
+    },
+    "matterHistoryPassedFlag": {
+      "@id": "granicus:matterHistoryPassedFlag",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryPassedFlagName": {
+      "@id": "granicus:matterHistoryPassedFlagName",
+      "@type": "xsd:string"
+    },
+    "matterHistoryRollCallFlag": {
+      "@id": "granicus:matterHistoryRollCallFlag",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryFlagExtra": {
+      "@id": "granicus:matterHistoryFlagExtra",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryTally": {
+      "@id": "granicus:matterHistoryTally",
+      "@type": "xsd:string"
+    },
+    "matterHistoryAccelaRecordId": {
+      "@id": "granicus:matterHistoryAccelaRecordId",
+      "@type": "xsd:string"
+    },
+    "matterHistoryConsent": {
+      "@id": "granicus:matterHistoryConsent",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryMoverId": {
+      "@id": "granicus:matterHistoryMoverId",
+      "@type": "xsd:integer"
+    },
+    "matterHistoryMoverName": {
+      "@id": "granicus:matterHistoryMoverName",
+      "@type": "xsd:string"
+    },
+    "matterHistorySeconderId": {
+      "@id": "granicus:matterHistorySeconderId",
+      "@type": "xsd:integer"
+    },
+    "matterHistorySeconderName": {
+      "@id": "granicus:matterHistorySeconderName",
+      "@type": "xsd:string"
+    },
+    "matterHistoryMatterStatusId": {
+      "@id": "granicus:matterHistoryMatterStatusId",
+      "@type": "xsd:integer"
+    },
+    "GranicusMatterIndex": "granicus:GranicusMatterIndex",
+    "matterIndexId": {
+      "@id": "granicus:matterIndexId",
+      "@type": "xsd:integer"
+    },
+    "matterIndexGuid": {
+      "@id": "granicus:matterIndexGuid",
+      "@type": "xsd:string"
+    },
+    "matterIndexLastModifiedUtc": {
+      "@id": "granicus:matterIndexLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterIndexRowVersion": {
+      "@id": "granicus:matterIndexRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterIndexMatterId": {
+      "@id": "granicus:matterIndexMatterId",
+      "@type": "xsd:integer"
+    },
+    "matterIndexIndexId": {
+      "@id": "granicus:matterIndexIndexId",
+      "@type": "xsd:integer"
+    },
+    "matterIndexName": {
+      "@id": "granicus:matterIndexName",
+      "@type": "xsd:string"
+    },
+    "GranicusMatterRelation": "granicus:GranicusMatterRelation",
+    "matterRelationId": {
+      "@id": "granicus:matterRelationId",
+      "@type": "xsd:integer"
+    },
+    "matterRelationGuid": {
+      "@id": "granicus:matterRelationGuid",
+      "@type": "xsd:string"
+    },
+    "matterRelationLastModifiedUtc": {
+      "@id": "granicus:matterRelationLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterRelationRowVersion": {
+      "@id": "granicus:matterRelationRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterRelationMatterId": {
+      "@id": "granicus:matterRelationMatterId",
+      "@type": "xsd:integer"
+    },
+    "matterRelationFlag": {
+      "@id": "granicus:matterRelationFlag",
+      "@type": "xsd:integer"
+    },
+    "GranicusMatterRequester": "granicus:GranicusMatterRequester",
+    "matterRequesterName": {
+      "@id": "granicus:matterRequesterName",
+      "@type": "xsd:string"
+    },
+    "GranicusMatter": "granicus:GranicusMatter",
+    "matterId": {
+      "@id": "granicus:matterId",
+      "@type": "xsd:integer"
+    },
+    "matterGuid": {
+      "@id": "granicus:matterGuid",
+      "@type": "xsd:string"
+    },
+    "matterLastModifiedUtc": {
+      "@id": "granicus:matterLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterRowVersion": {
+      "@id": "granicus:matterRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterFile": {
+      "@id": "granicus:matterFile",
+      "@type": "xsd:string"
+    },
+    "matterName": {
+      "@id": "granicus:matterName",
+      "@type": "xsd:string"
+    },
+    "matterTitle": {
+      "@id": "granicus:matterTitle",
+      "@type": "xsd:string"
+    },
+    "matterTypeId": {
+      "@id": "granicus:matterTypeId",
+      "@type": "xsd:integer"
+    },
+    "matterTypeName": {
+      "@id": "granicus:matterTypeName",
+      "@type": "xsd:string"
+    },
+    "matterStatusId": {
+      "@id": "granicus:matterStatusId",
+      "@type": "xsd:integer"
+    },
+    "matterStatusName": {
+      "@id": "granicus:matterStatusName",
+      "@type": "xsd:string"
+    },
+    "matterBodyId": {
+      "@id": "granicus:matterBodyId",
+      "@type": "xsd:integer"
+    },
+    "matterBodyName": {
+      "@id": "granicus:matterBodyName",
+      "@type": "xsd:string"
+    },
+    "matterIntroDate": {
+      "@id": "granicus:matterIntroDate",
+      "@type": "xsd:dateTime"
+    },
+    "matterAgendaDate": {
+      "@id": "granicus:matterAgendaDate",
+      "@type": "xsd:dateTime"
+    },
+    "matterPassedDate": {
+      "@id": "granicus:matterPassedDate",
+      "@type": "xsd:dateTime"
+    },
+    "matterEnactmentDate": {
+      "@id": "granicus:matterEnactmentDate",
+      "@type": "xsd:dateTime"
+    },
+    "matterEnactmentNumber": {
+      "@id": "granicus:matterEnactmentNumber",
+      "@type": "xsd:string"
+    },
+    "matterRequester": {
+      "@id": "granicus:matterRequester",
+      "@type": "xsd:string"
+    },
+    "matterNotes": {
+      "@id": "granicus:matterNotes",
+      "@type": "xsd:string"
+    },
+    "matterVersion": {
+      "@id": "granicus:matterVersion",
+      "@type": "xsd:string"
+    },
+    "matterCost": {
+      "@id": "granicus:matterCost",
+      "@type": "xsd:decimal"
+    },
+    "matterText1": {
+      "@id": "granicus:matterText1",
+      "@type": "xsd:string"
+    },
+    "matterText2": {
+      "@id": "granicus:matterText2",
+      "@type": "xsd:string"
+    },
+    "matterText3": {
+      "@id": "granicus:matterText3",
+      "@type": "xsd:string"
+    },
+    "matterText4": {
+      "@id": "granicus:matterText4",
+      "@type": "xsd:string"
+    },
+    "matterText5": {
+      "@id": "granicus:matterText5",
+      "@type": "xsd:string"
+    },
+    "matterDate1": {
+      "@id": "granicus:matterDate1",
+      "@type": "xsd:dateTime"
+    },
+    "matterDate2": {
+      "@id": "granicus:matterDate2",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXText1": {
+      "@id": "granicus:matterEXText1",
+      "@type": "xsd:string"
+    },
+    "matterEXText2": {
+      "@id": "granicus:matterEXText2",
+      "@type": "xsd:string"
+    },
+    "matterEXText3": {
+      "@id": "granicus:matterEXText3",
+      "@type": "xsd:string"
+    },
+    "matterEXText4": {
+      "@id": "granicus:matterEXText4",
+      "@type": "xsd:string"
+    },
+    "matterEXText5": {
+      "@id": "granicus:matterEXText5",
+      "@type": "xsd:string"
+    },
+    "matterEXText6": {
+      "@id": "granicus:matterEXText6",
+      "@type": "xsd:string"
+    },
+    "matterEXText7": {
+      "@id": "granicus:matterEXText7",
+      "@type": "xsd:string"
+    },
+    "matterEXText8": {
+      "@id": "granicus:matterEXText8",
+      "@type": "xsd:string"
+    },
+    "matterEXText9": {
+      "@id": "granicus:matterEXText9",
+      "@type": "xsd:string"
+    },
+    "matterEXText10": {
+      "@id": "granicus:matterEXText10",
+      "@type": "xsd:string"
+    },
+    "matterEXText11": {
+      "@id": "granicus:matterEXText11",
+      "@type": "xsd:string"
+    },
+    "matterEXDate1": {
+      "@id": "granicus:matterEXDate1",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate2": {
+      "@id": "granicus:matterEXDate2",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate3": {
+      "@id": "granicus:matterEXDate3",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate4": {
+      "@id": "granicus:matterEXDate4",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate5": {
+      "@id": "granicus:matterEXDate5",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate6": {
+      "@id": "granicus:matterEXDate6",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate7": {
+      "@id": "granicus:matterEXDate7",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate8": {
+      "@id": "granicus:matterEXDate8",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate9": {
+      "@id": "granicus:matterEXDate9",
+      "@type": "xsd:dateTime"
+    },
+    "matterEXDate10": {
+      "@id": "granicus:matterEXDate10",
+      "@type": "xsd:dateTime"
+    },
+    "matterAgiloftId": {
+      "@id": "granicus:matterAgiloftId",
+      "@type": "xsd:integer"
+    },
+    "matterReference": {
+      "@id": "granicus:matterReference",
+      "@type": "xsd:string"
+    },
+    "matterRestrictViewViaWeb": {
+      "@id": "granicus:matterRestrictViewViaWeb",
+      "@type": "xsd:boolean"
+    },
+    "matterReports": {
+      "@id": "granicus:matterReports",
+      "@container": "@list"
+    },
+    "GranicusMatterReport": "granicus:GranicusMatterReport",
+    "reportName": {
+      "@id": "granicus:reportName",
+      "@type": "xsd:string"
+    },
+    "reportURL": {
+      "@id": "granicus:reportURL",
+      "@type": "xsd:string"
+    },
+    "reportType": {
+      "@id": "granicus:reportType",
+      "@type": "xsd:string"
+    },
+    "GranicusMatterSponsor": "granicus:GranicusMatterSponsor",
+    "matterSponsorId": {
+      "@id": "granicus:matterSponsorId",
+      "@type": "xsd:integer"
+    },
+    "matterSponsorGuid": {
+      "@id": "granicus:matterSponsorGuid",
+      "@type": "xsd:string"
+    },
+    "matterSponsorLastModifiedUtc": {
+      "@id": "granicus:matterSponsorLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterSponsorRowVersion": {
+      "@id": "granicus:matterSponsorRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterSponsorMatterId": {
+      "@id": "granicus:matterSponsorMatterId",
+      "@type": "xsd:integer"
+    },
+    "matterSponsorMatterVersion": {
+      "@id": "granicus:matterSponsorMatterVersion",
+      "@type": "xsd:string"
+    },
+    "matterSponsorNameId": {
+      "@id": "granicus:matterSponsorNameId",
+      "@type": "xsd:integer"
+    },
+    "matterSponsorBodyId": {
+      "@id": "granicus:matterSponsorBodyId",
+      "@type": "xsd:integer"
+    },
+    "matterSponsorName": {
+      "@id": "granicus:matterSponsorName",
+      "@type": "xsd:string"
+    },
+    "matterSponsorSequence": {
+      "@id": "granicus:matterSponsorSequence",
+      "@type": "xsd:integer"
+    },
+    "matterSponsorLinkFlag": {
+      "@id": "granicus:matterSponsorLinkFlag",
+      "@type": "xsd:integer"
+    },
+    "GranicusMatterStatus": "granicus:GranicusMatterStatus",
+    "matterStatusGuid": {
+      "@id": "granicus:matterStatusGuid",
+      "@type": "xsd:string"
+    },
+    "matterStatusLastModifiedUtc": {
+      "@id": "granicus:matterStatusLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterStatusRowVersion": {
+      "@id": "granicus:matterStatusRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterStatusSort": {
+      "@id": "granicus:matterStatusSort",
+      "@type": "xsd:integer"
+    },
+    "matterStatusActiveFlag": {
+      "@id": "granicus:matterStatusActiveFlag",
+      "@type": "xsd:integer"
+    },
+    "matterStatusDescription": {
+      "@id": "granicus:matterStatusDescription",
+      "@type": "xsd:string"
+    },
+    "matterStatusUsedFlag": {
+      "@id": "granicus:matterStatusUsedFlag",
+      "@type": "xsd:integer"
+    },
+    "matterStatusPublicFlag": {
+      "@id": "granicus:matterStatusPublicFlag",
+      "@type": "xsd:integer"
+    },
+    "GranicusMatterText": "granicus:GranicusMatterText",
+    "matterTextId": {
+      "@id": "granicus:matterTextId",
+      "@type": "xsd:integer"
+    },
+    "matterTextGuid": {
+      "@id": "granicus:matterTextGuid",
+      "@type": "xsd:string"
+    },
+    "matterTextLastModifiedUtc": {
+      "@id": "granicus:matterTextLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterTextRowVersion": {
+      "@id": "granicus:matterTextRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterTextMatterId": {
+      "@id": "granicus:matterTextMatterId",
+      "@type": "xsd:integer"
+    },
+    "matterTextVersion": {
+      "@id": "granicus:matterTextVersion",
+      "@type": "xsd:string"
+    },
+    "matterTextPlain": {
+      "@id": "granicus:matterTextPlain",
+      "@type": "xsd:string"
+    },
+    "matterTextRtf": {
+      "@id": "granicus:matterTextRtf",
+      "@type": "xsd:string"
+    },
+    "GranicusKeyValue": "granicus:GranicusKeyValue",
+    "key": {
+      "@id": "granicus:key",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "granicus:value",
+      "@type": "xsd:string"
+    },
+    "GranicusMatterType": "granicus:GranicusMatterType",
+    "matterTypeGuid": {
+      "@id": "granicus:matterTypeGuid",
+      "@type": "xsd:string"
+    },
+    "matterTypeLastModifiedUtc": {
+      "@id": "granicus:matterTypeLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "matterTypeRowVersion": {
+      "@id": "granicus:matterTypeRowVersion",
+      "@type": "xsd:string"
+    },
+    "matterTypeSort": {
+      "@id": "granicus:matterTypeSort",
+      "@type": "xsd:integer"
+    },
+    "matterTypeActiveFlag": {
+      "@id": "granicus:matterTypeActiveFlag",
+      "@type": "xsd:integer"
+    },
+    "matterTypeDescription": {
+      "@id": "granicus:matterTypeDescription",
+      "@type": "xsd:string"
+    },
+    "matterTypeUsedFlag": {
+      "@id": "granicus:matterTypeUsedFlag",
+      "@type": "xsd:integer"
+    },
+    "GranicusOfficeRecord": "granicus:GranicusOfficeRecord",
+    "officeRecordId": {
+      "@id": "granicus:officeRecordId",
+      "@type": "xsd:integer"
+    },
+    "officeRecordGuid": {
+      "@id": "granicus:officeRecordGuid",
+      "@type": "xsd:string"
+    },
+    "officeRecordLastModifiedUtc": {
+      "@id": "granicus:officeRecordLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "officeRecordRowVersion": {
+      "@id": "granicus:officeRecordRowVersion",
+      "@type": "xsd:string"
+    },
+    "officeRecordFirstName": {
+      "@id": "granicus:officeRecordFirstName",
+      "@type": "xsd:string"
+    },
+    "officeRecordLastName": {
+      "@id": "granicus:officeRecordLastName",
+      "@type": "xsd:string"
+    },
+    "officeRecordEmail": {
+      "@id": "granicus:officeRecordEmail",
+      "@type": "xsd:string"
+    },
+    "officeRecordFullName": {
+      "@id": "granicus:officeRecordFullName",
+      "@type": "xsd:string"
+    },
+    "officeRecordStartDate": {
+      "@id": "granicus:officeRecordStartDate",
+      "@type": "xsd:dateTime"
+    },
+    "officeRecordEndDate": {
+      "@id": "granicus:officeRecordEndDate",
+      "@type": "xsd:dateTime"
+    },
+    "officeRecordSort": {
+      "@id": "granicus:officeRecordSort",
+      "@type": "xsd:integer"
+    },
+    "officeRecordPersonId": {
+      "@id": "granicus:officeRecordPersonId",
+      "@type": "xsd:integer"
+    },
+    "officeRecordBodyId": {
+      "@id": "granicus:officeRecordBodyId",
+      "@type": "xsd:integer"
+    },
+    "officeRecordBodyName": {
+      "@id": "granicus:officeRecordBodyName",
+      "@type": "xsd:string"
+    },
+    "officeRecordTitle": {
+      "@id": "granicus:officeRecordTitle",
+      "@type": "xsd:string"
+    },
+    "officeRecordVoteDivider": {
+      "@id": "granicus:officeRecordVoteDivider",
+      "@type": "xsd:decimal"
+    },
+    "officeRecordExtendFlag": {
+      "@id": "granicus:officeRecordExtendFlag",
+      "@type": "xsd:integer"
+    },
+    "officeRecordMemberTypeId": {
+      "@id": "granicus:officeRecordMemberTypeId",
+      "@type": "xsd:integer"
+    },
+    "officeRecordMemberType": {
+      "@id": "granicus:officeRecordMemberType",
+      "@type": "xsd:string"
+    },
+    "officeRecordSupportNameId": {
+      "@id": "granicus:officeRecordSupportNameId",
+      "@type": "xsd:integer"
+    },
+    "officeRecordSupportFullName": {
+      "@id": "granicus:officeRecordSupportFullName",
+      "@type": "xsd:string"
+    },
+    "officeRecordExtraText": {
+      "@id": "granicus:officeRecordExtraText",
+      "@type": "xsd:string"
+    },
+    "GranicusPerson": "granicus:GranicusPerson",
+    "personId": {
+      "@id": "granicus:personId",
+      "@type": "xsd:integer"
+    },
+    "personGuid": {
+      "@id": "granicus:personGuid",
+      "@type": "xsd:string"
+    },
+    "personLastModifiedUtc": {
+      "@id": "granicus:personLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "personRowVersion": {
+      "@id": "granicus:personRowVersion",
+      "@type": "xsd:string"
+    },
+    "personFirstName": {
+      "@id": "granicus:personFirstName",
+      "@type": "xsd:string"
+    },
+    "personLastName": {
+      "@id": "granicus:personLastName",
+      "@type": "xsd:string"
+    },
+    "personFullName": {
+      "@id": "granicus:personFullName",
+      "@type": "xsd:string"
+    },
+    "personActiveFlag": {
+      "@id": "granicus:personActiveFlag",
+      "@type": "xsd:integer"
+    },
+    "personCanViewFlag": {
+      "@id": "granicus:personCanViewFlag",
+      "@type": "xsd:integer"
+    },
+    "personUsedSponsorFlag": {
+      "@id": "granicus:personUsedSponsorFlag",
+      "@type": "xsd:integer"
+    },
+    "personAddress1": {
+      "@id": "granicus:personAddress1",
+      "@type": "xsd:string"
+    },
+    "personCity1": {
+      "@id": "granicus:personCity1",
+      "@type": "xsd:string"
+    },
+    "personState1": {
+      "@id": "granicus:personState1",
+      "@type": "xsd:string"
+    },
+    "personZip1": {
+      "@id": "granicus:personZip1",
+      "@type": "xsd:string"
+    },
+    "personPhone": {
+      "@id": "granicus:personPhone",
+      "@type": "xsd:string"
+    },
+    "personFax": {
+      "@id": "granicus:personFax",
+      "@type": "xsd:string"
+    },
+    "personEmail": {
+      "@id": "granicus:personEmail",
+      "@type": "xsd:string"
+    },
+    "personWWW": {
+      "@id": "granicus:personWWW",
+      "@type": "xsd:string"
+    },
+    "personAddress2": {
+      "@id": "granicus:personAddress2",
+      "@type": "xsd:string"
+    },
+    "personCity2": {
+      "@id": "granicus:personCity2",
+      "@type": "xsd:string"
+    },
+    "personState2": {
+      "@id": "granicus:personState2",
+      "@type": "xsd:string"
+    },
+    "personZip2": {
+      "@id": "granicus:personZip2",
+      "@type": "xsd:string"
+    },
+    "personPhone2": {
+      "@id": "granicus:personPhone2",
+      "@type": "xsd:string"
+    },
+    "personFax2": {
+      "@id": "granicus:personFax2",
+      "@type": "xsd:string"
+    },
+    "personEmail2": {
+      "@id": "granicus:personEmail2",
+      "@type": "xsd:string"
+    },
+    "personWWW2": {
+      "@id": "granicus:personWWW2",
+      "@type": "xsd:string"
+    },
+    "GranicusRollCall": "granicus:GranicusRollCall",
+    "rollCallId": {
+      "@id": "granicus:rollCallId",
+      "@type": "xsd:integer"
+    },
+    "rollCallGuid": {
+      "@id": "granicus:rollCallGuid",
+      "@type": "xsd:string"
+    },
+    "rollCallLastModifiedUtc": {
+      "@id": "granicus:rollCallLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "rollCallRowVersion": {
+      "@id": "granicus:rollCallRowVersion",
+      "@type": "xsd:string"
+    },
+    "rollCallPersonId": {
+      "@id": "granicus:rollCallPersonId",
+      "@type": "xsd:integer"
+    },
+    "rollCallPersonName": {
+      "@id": "granicus:rollCallPersonName",
+      "@type": "xsd:string"
+    },
+    "rollCallValueId": {
+      "@id": "granicus:rollCallValueId",
+      "@type": "xsd:integer"
+    },
+    "rollCallValueName": {
+      "@id": "granicus:rollCallValueName",
+      "@type": "xsd:string"
+    },
+    "rollCallSort": {
+      "@id": "granicus:rollCallSort",
+      "@type": "xsd:integer"
+    },
+    "rollCallResult": {
+      "@id": "granicus:rollCallResult",
+      "@type": "xsd:integer"
+    },
+    "rollCallEventItemId": {
+      "@id": "granicus:rollCallEventItemId",
+      "@type": "xsd:integer"
+    },
+    "GranicusVote": "granicus:GranicusVote",
+    "voteId": {
+      "@id": "granicus:voteId",
+      "@type": "xsd:integer"
+    },
+    "voteGuid": {
+      "@id": "granicus:voteGuid",
+      "@type": "xsd:string"
+    },
+    "voteLastModifiedUtc": {
+      "@id": "granicus:voteLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "voteRowVersion": {
+      "@id": "granicus:voteRowVersion",
+      "@type": "xsd:string"
+    },
+    "votePersonId": {
+      "@id": "granicus:votePersonId",
+      "@type": "xsd:integer"
+    },
+    "votePersonName": {
+      "@id": "granicus:votePersonName",
+      "@type": "xsd:string"
+    },
+    "voteValueId": {
+      "@id": "granicus:voteValueId",
+      "@type": "xsd:integer"
+    },
+    "voteValueName": {
+      "@id": "granicus:voteValueName",
+      "@type": "xsd:string"
+    },
+    "voteSort": {
+      "@id": "granicus:voteSort",
+      "@type": "xsd:integer"
+    },
+    "voteResult": {
+      "@id": "granicus:voteResult",
+      "@type": "xsd:integer"
+    },
+    "voteEventItemId": {
+      "@id": "granicus:voteEventItemId",
+      "@type": "xsd:integer"
+    },
+    "GranicusVoteType": "granicus:GranicusVoteType",
+    "voteTypeId": {
+      "@id": "granicus:voteTypeId",
+      "@type": "xsd:integer"
+    },
+    "voteTypeGuid": {
+      "@id": "granicus:voteTypeGuid",
+      "@type": "xsd:string"
+    },
+    "voteTypeLastModifiedUtc": {
+      "@id": "granicus:voteTypeLastModifiedUtc",
+      "@type": "xsd:dateTime"
+    },
+    "voteTypeRowVersion": {
+      "@id": "granicus:voteTypeRowVersion",
+      "@type": "xsd:string"
+    },
+    "voteTypeName": {
+      "@id": "granicus:voteTypeName",
+      "@type": "xsd:string"
+    },
+    "voteTypePluralName": {
+      "@id": "granicus:voteTypePluralName",
+      "@type": "xsd:string"
+    },
+    "voteTypeUsedFor": {
+      "@id": "granicus:voteTypeUsedFor",
+      "@type": "xsd:integer"
+    },
+    "voteTypeResult": {
+      "@id": "granicus:voteTypeResult",
+      "@type": "xsd:integer"
+    },
+    "voteTypeSort": {
+      "@id": "granicus:voteTypeSort",
+      "@type": "xsd:integer"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Granicus API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Granicus's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-18) from openapi/granicus-legistar-openapi.yml.",
+  "dcterms:created": "2026-10-18",
+  "dcterms:source": [
+    "openapi/granicus-legistar-openapi.yml"
+  ]
+}

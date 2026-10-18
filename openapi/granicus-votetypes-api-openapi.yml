@@ -1,0 +1,309 @@
+openapi: 3.2.0
+info:
+  title: Granicus Vote Types API
+  version: v1
+  description: 'Operations tagged VoteTypes across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: VoteTypes
+paths:
+  /v1/{Client}/VoteTypes:
+    get:
+      tags:
+      - VoteTypes
+      summary: Gets all Vote Types
+      operationId: VoteTypes_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusVoteType'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusVoteType'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusVoteType'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusVoteType'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusVoteType'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusVoteType'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusVoteType'
+    post:
+      tags:
+      - VoteTypes
+      summary: Adds one Vote Type
+      operationId: VoteTypes_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+        description: GranicusVoteType object to be inserted. Note that VoteTypeId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/VoteTypes/{VoteTypeId}:
+    get:
+      tags:
+      - VoteTypes
+      summary: Gets one Vote Type
+      operationId: VoteTypes_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: VoteTypeId
+        in: path
+        description: The Id of the Vote Type.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusVoteType'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusVoteType'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusVoteType'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusVoteType'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusVoteType'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusVoteType'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusVoteType'
+    put:
+      tags:
+      - VoteTypes
+      summary: Updates one Vote Type
+      operationId: VoteTypes_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: VoteTypeId
+        in: path
+        description: The Id of the Vote Type.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusVoteType'
+        description: GranicusVoteType object to be updated. Note that VoteTypeId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - VoteTypes
+      summary: Deletes one Vote Type
+      operationId: VoteTypes_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: VoteTypeId
+        in: path
+        description: The Id of the Vote Type.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusVoteType:
+      required:
+      - voteTypeName
+      - voteTypePluralName
+      type: object
+      properties:
+        voteTypeId:
+          format: int32
+          type: integer
+        voteTypeGuid:
+          type: string
+        voteTypeLastModifiedUtc:
+          format: date-time
+          type: string
+        voteTypeRowVersion:
+          format: byte
+          type: string
+        voteTypeName:
+          type: string
+        voteTypePluralName:
+          type: string
+        voteTypeUsedFor:
+          format: int32
+          type: integer
+        voteTypeResult:
+          format: int32
+          type: integer
+        voteTypeSort:
+          format: int32
+          type: integer
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml

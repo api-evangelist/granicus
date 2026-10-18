@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/granicus/main/json-schema/granicus-granicus-event-item-schema.json",
+  "title": "GranicusEventItem",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/granicus-legistar-openapi.yml#/components/schemas/GranicusEventItem",
+  "type": "object",
+  "properties": {
+    "eventItemId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemGuid": {
+      "type": "string"
+    },
+    "eventItemLastModifiedUtc": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "eventItemRowVersion": {
+      "format": "byte",
+      "type": "string"
+    },
+    "eventItemEventId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemAgendaSequence": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemMinutesSequence": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemAgendaNumber": {
+      "type": "string"
+    },
+    "eventItemVideo": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemVideoIndex": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemVersion": {
+      "type": "string"
+    },
+    "eventItemAgendaNote": {
+      "type": "string"
+    },
+    "eventItemMinutesNote": {
+      "type": "string"
+    },
+    "eventItemActionId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemActionName": {
+      "type": "string"
+    },
+    "eventItemActionText": {
+      "type": "string"
+    },
+    "eventItemPassedFlag": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemPassedFlagName": {
+      "type": "string"
+    },
+    "eventItemRollCallFlag": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemFlagExtra": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemTitle": {
+      "type": "string"
+    },
+    "eventItemTally": {
+      "type": "string"
+    },
+    "eventItemAccelaRecordId": {
+      "type": "string"
+    },
+    "eventItemConsent": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemMoverId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemMover": {
+      "type": "string"
+    },
+    "eventItemSeconderId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemSeconder": {
+      "type": "string"
+    },
+    "eventItemMatterId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "eventItemMatterGuid": {
+      "type": "string"
+    },
+    "eventItemMatterFile": {
+      "type": "string"
+    },
+    "eventItemMatterName": {
+      "type": "string"
+    },
+    "eventItemMatterType": {
+      "type": "string"
+    },
+    "eventItemMatterStatus": {
+      "type": "string"
+    },
+    "eventItemMatterAttachments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/GranicusMatterAttachment"
+      }
+    }
+  },
+  "$defs": {
+    "GranicusMatterAttachment": {
+      "required": [
+        "matterAttachmentName"
+      ],
+      "type": "object",
+      "properties": {
+        "matterAttachmentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "matterAttachmentGuid": {
+          "type": "string"
+        },
+        "matterAttachmentLastModifiedUtc": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "matterAttachmentRowVersion": {
+          "format": "byte",
+          "type": "string"
+        },
+        "matterAttachmentName": {
+          "type": "string"
+        },
+        "matterAttachmentHyperlink": {
+          "type": "string"
+        },
+        "matterAttachmentFileName": {
+          "type": "string"
+        },
+        "matterAttachmentMatterVersion": {
+          "type": "string"
+        },
+        "matterAttachmentIsHyperlink": {
+          "type": "boolean"
+        },
+        "matterAttachmentBinary": {
+          "format": "byte",
+          "type": "string"
+        },
+        "matterAttachmentIsSupportingDocument": {
+          "type": "boolean"
+        },
+        "matterAttachmentShowOnInternetPage": {
+          "type": "boolean"
+        },
+        "matterAttachmentIsMinuteOrder": {
+          "type": "boolean"
+        },
+        "matterAttachmentIsBoardLetter": {
+          "type": "boolean"
+        },
+        "matterAttachmentAgiloftId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "matterAttachmentDescription": {
+          "type": "string"
+        },
+        "matterAttachmentPrintWithReports": {
+          "type": "boolean"
+        },
+        "matterAttachmentSort": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

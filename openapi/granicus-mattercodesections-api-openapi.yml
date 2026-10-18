@@ -1,0 +1,334 @@
+openapi: 3.2.0
+info:
+  title: Granicus Matter Code Sections API
+  version: v1
+  description: 'Operations tagged MatterCodeSections across 2 of this provider''s published API definitions: granicus-legistar-swagger.json, granicus-legistar-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://webapi.legistar.com
+tags:
+- name: MatterCodeSections
+paths:
+  /v1/{Client}/Matters/{MatterId}/CodeSections:
+    get:
+      tags:
+      - MatterCodeSections
+      summary: Gets all Matter CodeSections for one Matter record
+      operationId: MatterCodeSections_GetAll
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        description: The MatterId of the Matter.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterCodeSection'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterCodeSection'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterCodeSection'
+            text/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterCodeSection'
+            text/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterCodeSection'
+            application/javascript:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterCodeSection'
+            application/json-p:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GranicusMatterCodeSection'
+    post:
+      tags:
+      - MatterCodeSections
+      summary: Adds one Matter Code Section
+      operationId: MatterCodeSections_Post
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+        description: GranicusMatterCodeSection object to be inserted. Note that MatterCodeSectionId is not required to be set.
+        required: true
+    servers:
+    - url: https://webapi.legistar.com
+  /v1/{Client}/Matters/{MatterId}/CodeSections/{MatterCodeSectionId}:
+    get:
+      tags:
+      - MatterCodeSections
+      summary: Gets one Matter Code Section
+      operationId: MatterCodeSections_Get
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterCodeSectionId
+        in: path
+        description: The MatterCodeSectionId of the Matter Code Section.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterCodeSection'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterCodeSection'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterCodeSection'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterCodeSection'
+            text/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterCodeSection'
+            application/javascript:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterCodeSection'
+            application/json-p:
+              schema:
+                $ref: '#/components/schemas/GranicusMatterCodeSection'
+    put:
+      tags:
+      - MatterCodeSections
+      summary: Updates one Matter Code Section
+      operationId: MatterCodeSections_Put
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterCodeSectionId
+        in: path
+        description: The MatterCodeSectionId of the Matter Code Section.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GranicusMatterCodeSection'
+        description: GranicusMatterCodeSection object to be updated. Note that MatterCodeSectionId is not required to be set.
+        required: true
+    delete:
+      tags:
+      - MatterCodeSections
+      summary: Deletes one Matter Code Section
+      operationId: MatterCodeSections_Delete
+      parameters:
+      - name: Client
+        in: path
+        description: The code of the Client database to connect to.
+        required: true
+        schema:
+          type: string
+      - name: MatterCodeSectionId
+        in: path
+        description: The MatterCodeSectionId of the Matter Code Section.
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: MatterId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/xml:
+              schema:
+                type: object
+            text/javascript:
+              schema:
+                type: object
+            application/javascript:
+              schema:
+                type: object
+            application/json-p:
+              schema:
+                type: object
+    servers:
+    - url: https://webapi.legistar.com
+components:
+  schemas:
+    GranicusMatterCodeSection:
+      required:
+      - matterCodeSectionMatterId
+      - matterCodeSectionCodeSectionId
+      type: object
+      properties:
+        matterCodeSectionId:
+          format: int32
+          type: integer
+        matterCodeSectionGuid:
+          type: string
+        matterCodeSectionLastModifiedUtc:
+          format: date-time
+          type: string
+        matterCodeSectionRowVersion:
+          format: byte
+          type: string
+        matterCodeSectionMatterId:
+          format: int32
+          type: integer
+        matterCodeSectionCodeSectionId:
+          format: int32
+          type: integer
+        matterCodeSectionNumber:
+          type: string
+        matterCodeSectionName:
+          type: string
+x-refined-from:
+- granicus-legistar-swagger.json
+- granicus-legistar-openapi.yml
