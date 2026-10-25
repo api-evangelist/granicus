@@ -1,0 +1,14 @@
+{
+  "repo": "granicus",
+  "feeds": [
+    {
+      "source": "https://granicus.com/resources/blog/",
+      "feed_url": "https://granicus.com/resources/blog/feed/",
+      "title": "",
+      "saved": 2,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 2,
+  "fetched": "2026-10-24T12:29:31Z"
+}
